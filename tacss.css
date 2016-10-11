@@ -15,16 +15,17 @@ article {
     font-size: 30px;
     text-align: center;
     border: 2px solid black;
-    background-color:#4d2800;
     color:white;
     width:1900px;
       
 
 }
 
+
 nav {
     height:50px;
     margin-left: 500px;
+	background-color:white;
 
 }
 }
@@ -33,7 +34,7 @@ nav > a > button {
     height: 50px;
     width:200px;
     margin-left:5px;
-    background-color:#4d2800;
+    background-color:white;
     font-size:22px;
     color:black;
     
@@ -68,9 +69,11 @@ a {
 
 #rettArtikkel2 {
     float:right;
-    margin-top:-623.5px;
+    margin-top:-700.5px;
     width:50%;
-    height:690px;
+    height:500px;
+	display:inline-block;
+	
     
 }
 
@@ -83,6 +86,7 @@ a {
 .retter2 {
     border: 1px solid black;
     width: 100%;
+	height: 34.5%;
 	
 }
 
@@ -128,17 +132,29 @@ nav > a > button {
 #bestillingBoks {
     border: 3px solid black;
     text-align:center;
-    width:42.6%;
-    margin-left:5.1%;
+    width:24%;
+    margin-left:35.1%;
+	
+	
 }
 .drikkeBilde
 {
 	height:50px;
-	width: 30%;
+	width: 15%;
+	float:left;
+	
 }
 .drikkemeny1
 {
 	border: 1px solid black;
-    width: 100%;
+    width: 25%;
 	float:right;
+	height:200px;
+	text-align:center;
 }
+.bestilling1
+{
+	padding-right:22px;
+	width:50%;
+}
+

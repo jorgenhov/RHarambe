@@ -1,0 +1,138 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 26.sep.2016, 12:16:09
+    Author     : geeky
+*/
+
+
+
+#Logo {
+    float:top;
+    height:100px;
+    width:1890px;
+}
+
+#HarambePic {
+    float:left;
+    margin-top:11px;
+    margin-left:11px;
+}
+
+article {
+    height: 730px;
+    font-size: 30px;
+    text-align: center;
+    border: 2px solid black;
+    background-color:#4d2800;
+    color:white;
+    width:1900px;
+      
+
+}
+
+nav {
+    height:50px;
+    margin-left: 500px;
+}
+
+nav > button {
+    height: 50px;
+    width:200px;
+    margin-left:5px;
+    background-color:#4d2800;
+    font-size:22px;
+    color:black;
+    
+     
+}
+
+a {
+    text-decoration:none;
+    color:white;
+}
+
+#header {
+    text-align:center;
+}
+
+#retterHeader, #bordHeader {
+    text-align:center;
+}
+
+#rettArtikkel {
+    margin-top:40px;
+    margin-left:5%;
+    border: 1px solid black;
+    width: 40%;
+    height: 690px;
+}
+
+
+
+
+#rettArtikkel2 {
+    float:right;
+    margin-top:-623.5px;
+    width:50%;
+    height:690px;
+    
+}
+
+#BordArtikkel2 {
+    float:right;
+    margin-top:-710px;
+    width:50%;
+}
+
+.retter {
+    border: 1px solid black;
+    width: 48%;
+}
+
+.retter2 {
+    border: 1px solid black;
+    width: 100%;
+}
+
+.rettBilde {
+    width:50%;
+    height:150px;
+}
+
+.rettSkrift {
+    float:right;
+    
+}
+
+#bordArtikkel {
+    border: 1px solid black;
+    width: 40%;
+    height: 690px;
+    margin-top:-691px;
+    margin-left:950px;
+}
+
+.bord {
+    border: 1px solid black;
+    width: 48%;
+    height:130px;
+    border-radius:300px;
+    margin-top:20px;
+    text-align:center;
+    background-color:saddlebrown;
+}
+
+.bord2 {
+    border: 1px solid black;
+    width: 100%;
+    height:130px;
+    border-radius:300px;
+    margin-top:20px;
+    text-align:center;
+    background-color:saddlebrown;
+}
+

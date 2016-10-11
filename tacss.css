@@ -1,0 +1,144 @@
+#Logo {
+    float:top;
+    height:100px;
+    width:1890px;
+}
+
+#HarambePic {
+    float:left;
+    margin-top:11px;
+    margin-left:11px;
+}
+
+article {
+    height: 730px;
+    font-size: 30px;
+    text-align: center;
+    border: 2px solid black;
+    background-color:#4d2800;
+    color:white;
+    width:1900px;
+      
+
+}
+
+nav {
+    height:50px;
+    margin-left: 500px;
+
+}
+}
+
+nav > a > button {
+    height: 50px;
+    width:200px;
+    margin-left:5px;
+    background-color:#4d2800;
+    font-size:22px;
+    color:black;
+    
+    
+}
+
+a {
+    text-decoration:none;
+    color:white;
+}
+
+#header {
+    text-align:center;
+}
+
+#retterHeader, #bordHeader {
+    text-align:center;
+}
+
+#rettArtikkel {
+    margin-top:40px;
+    margin-left:5%;
+    border: 1px solid black;
+    width: 40%;
+    height: 820px;
+    display:inline-block;
+    float:left;
+}
+
+
+
+
+#rettArtikkel2 {
+    float:right;
+    margin-top:-623.5px;
+    width:50%;
+    height:690px;
+    
+}
+
+
+.retter {
+    border: 1px solid black;
+    width: 48%;
+}
+
+.retter2 {
+    border: 1px solid black;
+    width: 100%;
+	
+}
+
+.rettBilde {
+    width:50%;
+    height:150px;
+}
+
+.rettSkrift {
+    float:right;
+    
+}
+
+#wrapper {
+    width:2000px;
+    
+    height: 800px;
+}
+#article1 {
+    border: 1px solid black;
+    width: 40%;
+    height: 690px;
+    
+    display:inline-block;
+    vertical-align:top;
+    float: left;
+    margin: 39px 0 0 100px;
+}
+nav {
+    height:50px;
+    margin-left: 500px;
+}
+
+nav > a > button {
+    height: 50px;
+    width:200px;
+	
+    margin-left:5px;
+    background-color:#4d2800;
+    font-size:22px;
+    color:black;
+}
+#bestillingBoks {
+    border: 3px solid black;
+    text-align:center;
+    width:42.6%;
+    margin-left:5.1%;
+}
+.drikkeBilde
+{
+	height:50px;
+	width: 30%;
+}
+.drikkemeny1
+{
+	border: 1px solid black;
+    width: 100%;
+	float:right;
+}

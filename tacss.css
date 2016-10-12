@@ -1,15 +1,84 @@
-#Logo {
-    float:top;
-    height:100px;
-    width:1890px;
+.pageWrap {
+    background: white;
+    max-width: 1080px;
+    width: 100%;
+    min-height: 1000px;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+	
+	
+.headerWrap {
+    max-width: 1080px;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(to bottom right, #A52224, #590000);
 }
 
-#HarambePic {
-    float:left;
-    margin-top:11px;
-    margin-left:11px;
+header {
+    max-width: 360px;
+    width: 33.3333%;
+    height: 150px;
+    float: left;
+    margin-bottom: 1%;
+    }
+    
+header img {
+    position: relative;
+    width: 100%;
 }
 
+
+nav {
+    max-width: 720px;
+    width: 66.6667%;
+    height: 150px;
+    float: right;
+    margin-bottom: 1%;
+}
+
+nav ul {
+    width: 100%;
+    list-style: none;
+    margin-top: 9%;
+}
+
+nav ul li {
+    width: 25%;
+    float: left;
+}
+
+nav ul li a {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    text-transform: uppercase;
+    color: #F2F2F2;
+    font-size: 160%;
+    font-family: monospace;
+    text-align: center;
+}
+
+nav ul li a:hover {
+    font-size: 180%;
+}
+nav ul li a:active {
+    
+}
+
+a {
+	text-decoration: none;
+}
+
+h1 {
+	color: #F2F2F2;
+	font-family: monospace;
+	margin-left: 10%;
+	font-size: 260%;
+	font-weight: 100;
+	margin-top: 10%;
+}
 article {
     height: 730px;
     font-size: 30px;
@@ -20,32 +89,6 @@ article {
       
 
 }
-
-
-nav {
-    height:50px;
-    margin-left: 500px;
-	background-color:white;
-
-}
-}
-
-nav > a > button {
-    height: 50px;
-    width:200px;
-    margin-left:5px;
-    background-color:white;
-    font-size:22px;
-    color:black;
-    
-    
-}
-
-a {
-    text-decoration:none;
-    color:white;
-}
-
 #header {
     text-align:center;
 }
@@ -115,20 +158,7 @@ a {
     float: left;
     margin: 39px 0 0 100px;
 }
-nav {
-    height:50px;
-    margin-left: 500px;
-}
 
-nav > a > button {
-    height: 50px;
-    width:200px;
-	
-    margin-left:5px;
-    background-color:#4d2800;
-    font-size:22px;
-    color:black;
-}
 #bestillingBoks {
     border: 3px solid black;
     text-align:center;

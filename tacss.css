@@ -1,11 +1,17 @@
+body {
+	background-color: #F9F9F9;
+}
+
 .pageWrap {
     background: white;
     max-width: 1080px;
     width: 100%;
-    min-height: 1000px;
+    min-height: 1310px;
     height: 100%;
     margin: 0 auto;
     position: relative;
+	background-color: white;
+	
 }
 	
 	
@@ -89,6 +95,13 @@ article {
       
 
 }
+
+.ArtikkelTA {
+	margin-left:5%;
+	margin-right: 5%;
+}
+
+
 #header {
     text-align:center;
 }
@@ -124,6 +137,7 @@ article {
 .retter {
     border: 1px solid black;
     width: 48%;
+
 }
 
 .retter2 {
@@ -167,24 +181,37 @@ article {
 	
 	
 }
+
+.drikkeWrap {
+	width: 100%;
+	margin-top:3%;
+}
+
 .drikkeBilde
 {
 	height:50px;
-	width: 15%;
+	width: 25%;
+	height: 35%;
 	float:left;
 	
 }
 .drikkemeny1
 {
 	border: 1px solid black;
-    width: 25%;
-	float:right;
-	height:200px;
+    width: 50%;
+	margin: 0 auto;
+	height:100%;
+	min-height: 60px;
 	text-align:center;
+	clear: both;
 }
-.bestilling1
-{
-	padding-right:22px;
-	width:50%;
+
+#bestillingBoksD {
+	margin-left: 20%;
+	margin-top: 10%;
+}
+
+form #bestilling2 {
+
 }
 

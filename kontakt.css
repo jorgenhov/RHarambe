@@ -8,6 +8,11 @@ and open the template in the editor.
     Author     : Jørgen
 */
 
+body {
+	background-color: #F9F9F9;
+}
+
+
 
 .pageWrap {
     background: white;

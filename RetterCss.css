@@ -9,34 +9,16 @@ and open the template in the editor.
 */
 
 
-
-#Logo {
-    float:top;
-    height:100px;
-    width:1890px;
+#headerWrap {
+	border: 1px solid black;
 }
 
-#HarambePic {
-    float:left;
-    margin-top:11px;
-    margin-left:11px;
-}
-
-article {
-    height: 730px;
-    font-size: 30px;
-    text-align: center;
-    border: 2px solid black;
-    background-color:#4d2800;
-    color:white;
-    width:1900px;
-      
-
+#pageWrap {
+	
 }
 
 nav {
-    height:50px;
-    margin-left: 500px;
+	margin-top: -15%;
 }
 
 nav > button {
@@ -61,67 +43,77 @@ a {
 
 #retterHeader, #bordHeader {
     text-align:center;
+	font-family: monospace;
 }
 
 #rettArtikkel {
-    margin-top:40px;
-    margin-left:5%;
+    margin-top:4%;
+    margin-left:0%;
     border: 1px solid black;
-    width: 40%;
-    height: 690px;
+    width: 48%;
+    height: 100%;
+	font-family: monospace;
 }
 
-
+* {
+/*	border: 0.2px solid black;*/
+}
 
 
 #rettArtikkel2 {
     float:right;
-    margin-top:-623.5px;
+    margin-top:-112%;
     width:50%;
-    height:690px;
+    height:80%;
     
+}
+
+#bordArtikkel {
+    border: 1px solid black;
+    width: 48%;
+    height: 635px;
+    margin-top:-59%;
+    margin-left:50%;
+	font-family: monospace;
 }
 
 #BordArtikkel2 {
     float:right;
-    margin-top:-710px;
+    margin-top:-106%;
     width:50%;
 }
 
 .retter {
     border: 1px solid black;
     width: 48%;
+	height:22%;
 }
 
 .retter2 {
     border: 1px solid black;
     width: 100%;
+	height:22%;
 }
 
 .rettBilde {
-    width:50%;
-    height:150px;
+    width:45%;
+    height:140px;
 }
 
 .rettSkrift {
     float:right;
+	width:53%;
     
 }
 
-#bordArtikkel {
-    border: 1px solid black;
-    width: 40%;
-    height: 690px;
-    margin-top:-691px;
-    margin-left:950px;
-}
+
 
 .bord {
     border: 1px solid black;
     width: 48%;
-    height:130px;
+    height:110px;
     border-radius:300px;
-    margin-top:20px;
+    margin-top:5%;
     text-align:center;
     background-color:saddlebrown;
 }
@@ -129,10 +121,17 @@ a {
 .bord2 {
     border: 1px solid black;
     width: 100%;
-    height:130px;
+    height:110px;
     border-radius:300px;
-    margin-top:20px;
+    margin-top:10%;
     text-align:center;
     background-color:saddlebrown;
+}
+#bestillingBoks {
+    border: 2px solid black;
+    text-align:center;
+    width:47.5%;
+    margin-left:0%;
+	margin-top:2.5%;
 }
 

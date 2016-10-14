@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+
+<head>
+    <title>Harambe</title>
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width" content="initial-scale=1">
+</head>
+    
+<body>
+
+<div class="pageWrap">
+    
+    <div class="headerWrap">       
+    <header>
+        <a href="index.html"><h1>Restaurant<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Harambe</h1></a> 
+    </header>    
+    
+   <nav>
+        <ul>
+           <li>
+              <a href="produkter.html">Hjem</a>
+           </li>
+           <li>
+            <a href="kontakt.html">Bestill</a>
+           </li>
+           <li>
+             <a href="nyheter.html">Takeaway</a> 
+           </li>
+           <li>
+            <a href="om_oss.html">Kontakt</a>
+           </li>
+         </ul>
+                
+    </nav>
+    </div>
+
+
+<section>
+    <form action="" name="myform" id="myform">
+      <table cellspacing="2" cellpadding="2" border="0">
+        <tr>
+          <td align="right">
+            First Name
+          </td>
+          <td>
+            <input type="text" name="FirstName" />
+          </td>
+        </tr>
+        <tr>
+          <td align="right">
+            Last Name
+          </td>
+          <td>
+            <input type="text" name="LastName" />
+          </td>
+        </tr>
+        <tr>
+          <td align="right">
+            EMail
+          </td>
+          <td>
+            <input type="text" name="Email" />
+          </td>
+        </tr>
+        <tr>
+          <td align="right">
+            Phone
+          </td>
+          <td>
+            <input type="text" name="Phone" />
+          </td>
+        </tr>
+        <tr>
+          <td align="right">
+            Address
+          </td>
+          <td>
+            <textarea cols="20" rows="5" name="Address"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td align="right">
+            Country
+          </td>
+          <td>
+            <select name="Country">
+            <option value="" selected="selected">
+              [choose yours]
+            </option>
+            <option value="008">
+              Albania
+            </option>
+            <option value="012">
+              Algeria
+            </option>
+            <option value="016">
+              American Samoa
+            </option>
+            <option value="020">
+              Andorra
+            </option>
+            <option value="024">
+              Angola
+            </option>
+            <option value="660">
+              Anguilla
+            </option>
+            <option value="010">
+              Antarctica
+            </option>
+            <option value="028">
+              Antigua And Barbuda
+            </option>
+            <option value="032">
+              Argentina
+            </option>
+            <option value="051">
+              Armenia
+            </option>
+            <option value="533">
+              Aruba
+            </option></select>
+          </td>
+        </tr>
+        <tr>
+          <td align="right"></td>
+          <td>
+            <div id="myform_errorloc" class="error_strings">
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td align="right"></td>
+          <td>
+            <input type="submit" value="Submit" />
+          </td>
+        </tr>
+      </table>
+    </form>
+
+
+
+
+</form>
+</body>
+</html>

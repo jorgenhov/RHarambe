@@ -1,49 +1,106 @@
-#Logo {
-    float:top;
-    height:100px;
-    width:1890px;
+body {
+	background-color: #F9F9F9;
 }
 
-#HarambePic {
-    float:left;
-    margin-top:11px;
-    margin-left:11px;
+.pageWrap {
+    background: white;
+    max-width: 1080px;
+    width: 100%;
+    min-height: 1310px;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+	background-color: white;
+	
+}
+	
+	
+.headerWrap {
+    max-width: 1080px;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(to bottom right, #A52224, #590000);
 }
 
+header {
+    max-width: 360px;
+    width: 33.3333%;
+    height: 150px;
+    float: left;
+    margin-bottom: 1%;
+    }
+    
+header img {
+    position: relative;
+    width: 100%;
+}
+
+
+nav {
+    max-width: 720px;
+    width: 66.6667%;
+    height: 150px;
+    float: right;
+    margin-bottom: 1%;
+}
+
+nav ul {
+    width: 100%;
+    list-style: none;
+    margin-top: 9%;
+}
+
+nav ul li {
+    width: 25%;
+    float: left;
+}
+
+nav ul li a {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    text-transform: uppercase;
+    color: #F2F2F2;
+    font-size: 160%;
+    font-family: monospace;
+    text-align: center;
+}
+
+nav ul li a:hover {
+    font-size: 180%;
+}
+nav ul li a:active {
+    
+}
+
+a {
+	text-decoration: none;
+}
+
+h1 {
+	color: #F2F2F2;
+	font-family: monospace;
+	margin-left: 10%;
+	font-size: 260%;
+	font-weight: 100;
+	margin-top: 10%;
+}
 article {
     height: 730px;
     font-size: 30px;
     text-align: center;
     border: 2px solid black;
-    background-color:#4d2800;
     color:white;
     width:1900px;
       
 
 }
 
-nav {
-    height:50px;
-    margin-left: 500px;
-
-}
+.ArtikkelTA {
+	margin-left:5%;
+	margin-right: 5%;
 }
 
-nav > a > button {
-    height: 50px;
-    width:200px;
-    margin-left:5px;
-    background-color:#4d2800;
-    font-size:22px;
-    color:black;
-    
-    
-}
-
-a {
-    text-decoration:none;
-    color:white;
-}
 
 #header {
     text-align:center;
@@ -68,9 +125,11 @@ a {
 
 #rettArtikkel2 {
     float:right;
-    margin-top:-623.5px;
+    margin-top:-700.5px;
     width:50%;
-    height:690px;
+    height:500px;
+	display:inline-block;
+	
     
 }
 
@@ -78,11 +137,13 @@ a {
 .retter {
     border: 1px solid black;
     width: 48%;
+
 }
 
 .retter2 {
     border: 1px solid black;
     width: 100%;
+	height: 34.5%;
 	
 }
 
@@ -111,34 +172,46 @@ a {
     float: left;
     margin: 39px 0 0 100px;
 }
-nav {
-    height:50px;
-    margin-left: 500px;
-}
 
-nav > a > button {
-    height: 50px;
-    width:200px;
-	
-    margin-left:5px;
-    background-color:#4d2800;
-    font-size:22px;
-    color:black;
-}
 #bestillingBoks {
     border: 3px solid black;
     text-align:center;
-    width:42.6%;
-    margin-left:5.1%;
+    width:24%;
+    margin-left:35.1%;
+	
+	
 }
+
+.drikkeWrap {
+	width: 100%;
+	margin-top:3%;
+}
+
 .drikkeBilde
 {
 	height:50px;
-	width: 30%;
+	width: 25%;
+	height: 35%;
+	float:left;
+	
 }
 .drikkemeny1
 {
 	border: 1px solid black;
-    width: 100%;
-	float:right;
+    width: 50%;
+	margin: 0 auto;
+	height:100%;
+	min-height: 60px;
+	text-align:center;
+	clear: both;
 }
+
+#bestillingBoksD {
+	margin-left: 20%;
+	margin-top: 10%;
+}
+
+form #bestilling2 {
+
+}
+

@@ -1,22 +1,47 @@
 
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
 <html>
-    <head>
-        <title>Home</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="HomeCss.css">
-    </head>
-    <body>
-        <div id="LogoDiv">
-            <img id="Logo" src="Harambe_Logo.png"/>
-        </div>
-        <nav>
-            <a href="index.html"><button>Home</button></a>
-            <a href="Retter.html"><button>Retter</button></a>
-            <a href=""><button>Takeaway</button></a>
-            <a href=""><button>Stuff</button></a>
-            
-        </nav>
+
+<head>
+    <title>Harambe</title>
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width" content="initial-scale=1">
+</head>
+    
+<body>
+
+<div class="pageWrap">
+    
+    <div class="headerWrap">       
+    <header>
+        <a href="index.html"><h1>Restaurant<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Harambe</h1></a> 
+    </header>    
+    
+   <nav>
+        <ul>
+           <li>
+              <a href="produkter.html">Hjem</a>
+           </li>
+           <li>
+            <a href="kontakt.html">Bestill</a>
+           </li>
+           <li>
+             <a href="nyheter.html">Takeaway</a> 
+           </li>
+           <li>
+            <a href="om_oss.html">Kontakt</a>
+           </li>
+         </ul>
+                
+    </nav>
+    </div>
+
 
 <form action="action_page.php">
 
@@ -34,15 +59,19 @@
     <button type="submit" class="loginbtn">Login</button>
     <br>
   </div>
-
-  <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Create Account</button>
-  </div>
-
-
-
-
 </form>
+
+  <form action="login2">
+    <input type="submit" value="Create Account" />
+</form>
+<!--
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn" action="login2.html">Create Account</button>
+  </div>
+-->
+
+
+
 </body>
 </html>
 

@@ -125,9 +125,9 @@ article {
 
 #rettArtikkel2 {
     float:right;
-    margin-top:-700.5px;
+    margin-top: -88%;
     width:50%;
-    height:500px;
+
 	display:inline-block;
 	
     
@@ -143,7 +143,7 @@ article {
 .retter2 {
     border: 1px solid black;
     width: 100%;
-	height: 34.5%;
+	height: 33%;
 	
 }
 
@@ -173,18 +173,14 @@ article {
     margin: 39px 0 0 100px;
 }
 
-#bestillingBoks {
-    border: 3px solid black;
-    text-align:center;
-    width:24%;
-    margin-left:35.1%;
-	
-	
+
+select {
+    clear: both;
 }
 
 .drikkeWrap {
 	width: 100%;
-	margin-top:3%;
+	margin-top:8%;
 }
 
 .drikkeBilde
@@ -211,7 +207,4 @@ article {
 	margin-top: 10%;
 }
 
-form #bestilling2 {
-
-}
 

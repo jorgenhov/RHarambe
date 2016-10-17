@@ -1,0 +1,68 @@
+<html>
+
+    <head>
+        <title>Harambe | Handlekurv</title>
+        <link href="handlekurv.css" rel="stylesheet" type="text/css">
+        <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+        <meta content="width=device-width" name="viewport">
+				<script type="text/javascript">
+			function subtractQty() {
+				if(document.getElementById("qty").value - 1 < 0)
+					return;
+				else {
+					document.getElementById("qty").value--;
+				}
+			}
+		</script>
+    </head>
+
+    <body>
+
+        <div class="pageWrap">
+
+            <div class="headerWrap">
+                <header>
+                    <a href="index.html">
+                        <h1>Restaurant<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Harambe</h1>
+                    </a>
+                </header>
+
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="produkter.html">Hjem</a>
+                        </li>
+                        <li>
+                            <a href="kontakt.html">Bestill</a>
+                        </li>
+                        <li>
+                            <a href="nyheter.html">Takeaway</a>
+                        </li>
+                        <li>
+                            <a href="om_oss.html">Kontakt</a>
+                        </li>
+                        <li>
+                            <a href="handlekurv.html">Handlekurv</a>
+                        </li>
+                    </ul>
+
+                </nav>
+
+            </div>
+            <p>
+                <a href="login.html">Logg inn</a>
+            </p>
+            <div class="Produkt1">			
+                <h4>Harambe special #4</h4> 
+				<h5>500kr</h5>
+		<form class="qtyForm" name="f1">
+			<input type="button" name="subtract" onclick='javascript: subtractQty();' value="-"/>
+			<input type="text" name="qty" id="qty" />
+			<input type="button" name="add" onclick='javascript: document.getElementById("qty").value++;' value="+"/>
+		</form>
+            </div>
+        </div>
+		
+
+    </body>
+</html>

@@ -1,14 +1,43 @@
 <?php
 
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| This file is where you may define all of the routes that are handled
+| by your application. Just tell Laravel the URIs it should respond
+| to using a Closure or controller method. Build something great!
+|
+*/
+
 Route::get('/', function () {
-    return view('index');
+    return view('welcome');
 });
 
-Route::get('index', function () { return view('index'); });
-Route::get('orders', function () { return view('orders'); });
-Route::get('takeAway', function () { return view('takeAway'); });
-Route::get('contact', function () { return view('contact'); });
-Route::get('shopping_cart', function () { return view('shopping_cart'); });
+Route::get('hjem', function(){
+	return view('hjem');
+});
+
+Route::get('retter', function(){
+	return view('retter');
+});
+
+Route::get('takeaway', function(){
+	return view('takeaway');
+});
+
+Route::get('kontakt', function(){
+	return view('kontakt');
+});
+
+Route::get('handlekurv', function(){
+	return view('handlekurv');
+});
+
+
+
+
 
 Auth::routes();
 

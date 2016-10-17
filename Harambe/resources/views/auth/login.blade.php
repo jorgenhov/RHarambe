@@ -1,4 +1,5 @@
-@extends('layouts.mal')
+
+@extends('layouts.default')
 
 @section('content')
 <div class="container">

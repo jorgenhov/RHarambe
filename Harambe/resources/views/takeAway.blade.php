@@ -1,144 +1,163 @@
-@extends('layouts.mal')
+@extends('layouts.default')
+
+@section('stylesheet') <link rel="stylesheet" type="text/css" href="css/takeaway.css"> @stop
+
 
 @section('content')
+<div class="ArtikkelTA"><h2>Take Away</h2><p>Vi har også en take away meny på diverse retter.seperat, og en database for take away. Vi vil og ha en database der vi lagrer og registrerer nye brukere. <br> Det vil bli satt opp en ukeplan for hver uke, der vil vi ha et felt for hver av oss, slik at vi enkelt har kontroll på hva som skal gjøres og hva som er blitt gjort.<
+<br>kommer til å sette opp et estimat over hvor mange timer vi kommer til å bruke. I oppgave deligeringa vil vi ta utgangspunkt i de sterke og svake sidene til hver og en, slik at alle får ansvar innenfor områder de er gode i.<br> Men vi vil og fokusere mye på de svake sidene, slik at alle får prøvd seg på alt og får en god forståelse for alle oppgavene som er i et slikt prosjekt.</p></div>
 
-<div class="col-md-10 col-md-offset-1">
-<h2>TakeAway</h2>
+        <div id="wrapper">
+        <div id="rettArtikkel">
+            <h2 id="retterHeader">Retter</h2>
+            
+            <div class="retter">
+                <img class="rettBilde" src ="https://gfx.nrk.no/7bhJYqzZ47LlTI1GmVK4EgUiIxStKj15j235pHP_VV3g"/> <p class="rettSkrift"><b>#1 Harambe Burger</b><br> Den mest mongo burgeren <br>på markedet!</p>
+				 <select> 
+				 <option value="Antall0">0</option>
+                    <option value="Antall1">1</option>
+                    <option value="Antall2">2</option>
+                    <option value="Antall3">3</option>
+                    <option value="Antall4">4</option>
+                    <option value="Antall5">5</option>
+                    <option value="Antall6">6</option>
+                    <option value="Antall7">7</option>
+                    <option value="Antall8">8</option>
+                </select>           
+		   </div>
+             <div class="retter">
+                 <img class="rettBilde" src ="http://kebablaunion.es/wp-content/uploads/2015/12/kebab-durum-rollo.jpg"/> <p class="rettSkrift"><b>#2 Harambe Kebab</b><br> Den fantastiske<br> harambe kebaben med<br> smak av fersk harambe kjøtt!</p>
+				 <select>
+<option value="Antall0">0</option>				 
+                    <option value="Antall1">1</option>
+                    <option value="Antall2">2</option>
+                    <option value="Antall3">3</option>
+                    <option value="Antall4">4</option>
+                    <option value="Antall5">5</option>
+                    <option value="Antall6">6</option>
+                    <option value="Antall7">7</option>
+                    <option value="Antall8">8</option>
+                </select>           
+		   </div>
+             <div class="retter">
+                 <img class="rettBilde" src ="http://static.klikk.no/recipe/2012.10.22/50850512eff0b1b161a39443/pannekaker_BIG.jpg"/> <p class="rettSkrift"><b>#3 Taco</b><br> En taco rett<br> med mange fyldige smaker <br>og har en helt unik <br> touch over seg.</p>
+				 <select> 
+				 <option value="Antall0">0</option>
+                    <option value="Antall1">1</option>
+                    <option value="Antall2">2</option>
+                    <option value="Antall3">3</option>
+                    <option value="Antall4">4</option>
+                    <option value="Antall5">5</option>
+                    <option value="Antall6">6</option>
+                    <option value="Antall7">7</option>
+                    <option value="Antall8">8</option>
+                </select>           
+		   </div>
+             <div class="retter">
+                <img class="rettBilde" src ="https://brandofitness.files.wordpress.com/2010/06/food-special-placeholder.gif"/> <p class="rettSkrift"><b>#4 Harambe Spesial</b><br> Vår favoritt rett. <br>Kommer med smaksgaranti.</p>
+            				 <select> 
+							 <option value="Antall0">0</option>
+                    <option value="Antall1">1</option>
+                    <option value="Antall2">2</option>
+                    <option value="Antall3">3</option>
+                    <option value="Antall4">4</option>
+                    <option value="Antall5">5</option>
+                    <option value="Antall6">6</option>
+                    <option value="Antall7">7</option>
+                    <option value="Antall8">8</option>
+                </select>
+				</div>
+            
+            <div id="rettArtikkel2">
+                <div class="retter2">
+                <img class="rettBilde" src ="http://vegetarguide.no/sites/vegetarguide.no/files/imagecache/Fullsize-640x480/images/node/nudler-med-tofu-708-533.jpg"/> <p class="rettSkrift"><b>#5 Harambe Nudler</b><br> Stekte nudler med <br>grønnsaker og harambe.</p>
+            				 <select> 
+							 <option value="Antall0">0</option>
+                    <option value="Antall1">1</option>
+                    <option value="Antall2">2</option>
+                    <option value="Antall3">3</option>
+                    <option value="Antall4">4</option>
+                    <option value="Antall5">5</option>
+                    <option value="Antall6">6</option>
+                    <option value="Antall7">7</option>
+                    <option value="Antall8">8</option>
+                </select>
+				</div>
+             <div class="retter2">
+                 <img class="rettBilde" src ="https://res.cloudinary.com/norgesgruppen/image/upload/c_fit,f_auto,h_604,q_80,w_604/fvjo3ocdrljqmhrwzbn1.jpg"/> <p class="rettSkrift"><b>#6 Harambe Salat</b><br> Salat med tomat, oliven,<br> agurk og harambe.</p>
+				 				 <select> 
+								 <option value="Antall0">0</option>
+                    <option value="Antall1">1</option>
+                    <option value="Antall2">2</option>
+                    <option value="Antall3">3</option>
+                    <option value="Antall4">4</option>
+                    <option value="Antall5">5</option>
+                    <option value="Antall6">6</option>
+                    <option value="Antall7">7</option>
+                    <option value="Antall8">8</option>
+                </select>
 
-Vi har også en take away meny på diverse retter.seperat, og en database for take away. Vi vil og ha en database der vi lagrer og registrerer nye brukere. 
-Det vil bli satt opp en ukeplan for hver uke, der vil vi ha et felt for hver av oss, slik at vi enkelt har kontroll på hva som skal gjøres og hva som er blitt gjort.
-kommer til å sette opp et estimat over hvor mange timer vi kommer til å bruke. I oppgave deligeringa vil vi ta utgangspunkt i de sterke og svake sidene til hver og en, slik at alle får ansvar innenfor områder de er gode i.
-Men vi vil og fokusere mye på de svake sidene, slik at alle får prøvd seg på alt og får en god forståelse for alle oppgavene som er i et slikt prosjekt.
-</div>
+            </div>
+             <div class="retter2">
+                 <img class="rettBilde" src ="http://cookdiary.net/wp-content/uploads/images/Pizza.jpg"/> <p class="rettSkrift"><b>#7 Harambe Pizza</b><br> Pizza med paprika,<br> tomat og den spesielle <br>harambe pepperonien. </p>
+				 				 <select> 
+								 <option value="Antall0">0</option>
+                    <option value="Antall1">1</option>
+                    <option value="Antall2">2</option>
+                    <option value="Antall3">3</option>
+                    <option value="Antall4">4</option>
+                    <o
+					ption value="Antall5">5</option>
+                    <option value="Antall6">6</option>
+                    <option value="Antall7">7</option>
+                    <option value="Antall8">8</option>
+                </select>
 
-
-	<div class="col-md-8 col-md-offset-2 border" style="margin-top:60px;">
-		<div class="col-md-offset-5"><h3><b>Retter</b></h3></div>
-			<div class="row">
-				<div class="col-md-6 border">
-					<div class="media">
-		  				<div class="media-left media-top">
-		    				<a href="#"><img class="media-object" style="height:150px;width:150px;" src="img/Hamburger.jpg" alt="..."></a>
-		  				</div>
-		  				<div class="media-body">
-		    				<h4 class="media-heading"><small>#1 Harambe Burger</small></h4>
-		    				Den mest mongo burgeren <br> på markedet!
-		 				</div>
-					</div>
-				</div>
-				<div class="col-md-6 border">
-					<div class="media">
-		  				<div class="media-left media-top">
-		    				<a href="#"><img class="media-object" style="height:150px;width:150px;" src="img/Kebab.jpg" alt="..."></a>
-		  				</div>
-		  				<div class="media-body">
-		    				<h4 class="media-heading"><small>#2 Harambe Kebab</small></h4>
-		    				Den fantastiske harambe kebaben med smak av fersk harambe kjøtt!
-		 				</div>
-					</div>
-				</div>
+            </div>
+             <div class="retter2">
+                 <img class="rettBilde" src ="http://www.errenskitchen.com/wp-content/uploads/2015/02/spaghetti-bolognese-8-of-1.jpg"/> <p class="rettSkrift"><b>#8 Harambe Bolognese</b><br> Spaghetti, tomatsaus <br> og harambe kjøttdeig.</p>
+				 <select>
+                    <option value="Antall0">0</option>				 
+                    <option value="Antall1">1</option>
+                    <option value="Antall2">2</option>
+                    <option value="Antall3">3</option>
+                    <option value="Antall4">4</option>
+                    <option value="Antall5">5</option>
+                    <option value="Antall6">6</option>
+                    <option value="Antall7">7</option>
+                    <option value="Antall8">8</option>
+                </select>
+            </div>
 			</div>
-			<div class="row">
-				<div class="col-md-6 border" style="margin-top:30px;">
-					<div class="media">
-		  				<div class="media-left media-top">
-		    				<a href="#"><img class="media-object" style="height:150px;width:150px;" src="img/Taco.jpg" alt="..."></a>
-		  				</div>
-		  				<div class="media-body">
-		    				<h4 class="media-heading"><small>#3 Taco</small></h4>
-		    				En taco rett med mange fyldige smaker og har en helt unik touch over seg.
-		 				</div>
-					</div>
-				</div>
-				<div class="col-md-6 border" style="margin-top:30px;">
-					<div class="media">
-		  				<div class="media-left media-top">
-		    				<a href="#"><img class="media-object" style="height:150px;width:150px;" src="img/Spesial.gif" alt="..."></a>
-		  				</div>
-		  				<div class="media-body">
-		    				<h4 class="media-heading"><small>#4 Harambe Spesial</small></h4>
-		    				Vår favoritt rett. <br> Kommer med smaksgaranti.
-		 				</div>
-					</div>
-				</div>
+			            <div id="bestillingBoks">
+            <form id="bestilling1"
+                <br><br><input type="submit" value="Legg til">
+                
+            </form>
+            </div>
+			<div class="drikkeWrap">
+			
+			    <div class="drikkemeny1">
+                 <img class="drikkeBilde" src ="http://i149.photobucket.com/albums/s49/evereen06/gorilladrinking.jpg" height:"300px" /> <p class="rettSkrift"><b>Drikkemeny</b></p>
+				 <select>
+                    <option value="Antall0">Cola</option>				 
+                    <option value="Antall1">Pepsi</option>
+                    <option value="Antall2">Fanta</option>
+                    <option value="Antall3">Ananas brus</option>
+                    <option value="Antall4">Cola zero</option>
+                    <option value="Antall5">Sprite</option>
+                    <option value="Antall6">Olden</option>
+                   
+                </select>
+			
+            <div id="bestillingBoksD">
+            <form id="bestilling2"
+                <br><br><input type="submit" value="Legg til">
+                
+            </form>
+            </div>
 			</div>
-			<div class="row">
-				<div class="col-md-6 border" style="margin-top:30px;">
-					<div class="media">
-		  				<div class="media-left media-top">
-		    				<a href="#"><img class="media-object" style="height:150px;width:150px;" src="img/Nudler.jpg" alt="..."></a>
-		  				</div>
-		  				<div class="media-body">
-		    				<h4 class="media-heading"><small>#5 Harambe Nudler</small></h4>
-		    				Stekte nudler med grønnsaker og harambe.
-		 				</div>
-					</div>
-				</div>
-				<div class="col-md-6 border" style="margin-top:30px;">
-					<div class="media">
-		  				<div class="media-left media-top">
-		    				<a href="#"><img class="media-object" style="height:150px;width:150px;" src="img/Salat.jpg" alt="..."></a>
-		  				</div>
-		  				<div class="media-body">
-		    				<h4 class="media-heading"><small>#6 Harambe Salat</small></h4>
-		    				Salat med tomat, oliven, agurk og harambe.
-		 				</div>
-					</div>
-				</div>
 			</div>
-			<div class="row">
-				<div class="col-md-6 border" style="margin-top:30px;">
-					<div class="media">
-		  				<div class="media-left media-top">
-		    				<a href="#"><img class="media-object" style="height:150px;width:150px;" src="img/Pizza.jpg" alt="..."></a>
-		  				</div>
-		  				<div class="media-body">
-		    				<h4 class="media-heading"><small>#7 Harambe Pizza</small></h4>
-		    				Pizza med paprika, tomat og den spesielle harambe pepperonien.
-		 				</div>
-					</div>
-				</div>
-				<div class="col-md-6 border" style="margin-top:30px;">
-					<div class="media">
-		  				<div class="media-left media-top">
-		    				<a href="#"><img class="media-object" style="height:150px;width:150px;" src="img/Spaghetti.jpg" alt="..."></a>
-		  				</div>
-		  				<div class="media-body">
-		    				<h4 class="media-heading"><small>#8 Harambe Bolognese</small></h4>
-		    				Spaghetti, tomatsaus og harambe kjøttdeig <br> og harambe ingredienser.
-		 				</div>
-					</div>
-				</div>
+            </div>
 			</div>
-			<div class="row">
-				<div class="col-md-offset-5">
-					<button class="btn btn-success">Legg til</button>
-				</div>
-			</div>
-		</div>
-			<div class="col-md-4 col-md-offset-4 border" style="margin-top:60px;">
-		<div class="row">
-				<h4 style="margin-left:40%;"><b>Drikkemeny</b></h4>
-				<div class="media">
-		  			<div class="media-left media-top">
-		    			<a href="#"><img class="media-object" style="height:150px;width:150px;" src="http://i149.photobucket.com/albums/s49/evereen06/gorilladrinking.jpg" alt="..."></a>
-		  			</div>
-		  			<div class="media-body">
-		    			<div class="media-heading">
-		    				<select>
-                    			<option value="Antall0">Cola</option>				 
-                    			<option value="Antall1">Pepsi</option>
-                    			<option value="Antall2">Fanta</option>
-                    			<option value="Antall3">Ananas brus</option>
-                    			<option value="Antall4">Cola zero</option>
-                    			<option value="Antall5">Sprite</option>
-                    			<option value="Antall6">Olden</option>   
-                			</select>
-		    			</div>
-		    			<button type="submit" class="btn btn-success">Legg til</button>
-		    		</div>
-				</div>
-			</div>
-		</div>
-	</div>
 @stop

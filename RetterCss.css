@@ -9,14 +9,6 @@ and open the template in the editor.
 */
 
 
-#headerWrap {
-	border: 1px solid black;
-}
-
-#pageWrap {
-	
-}
-
 nav {
 	margin-top: -15%;
 }
@@ -48,65 +40,100 @@ a {
 
 #rettArtikkel {
     margin-top:4%;
-    margin-left:0%;
     border: 1px solid black;
     width: 48%;
-    height: 100%;
 	font-family: monospace;
+	height:720px;
+	
 }
 
-* {
-/*	border: 0.2px solid black;*/
+#rettArtikkel1 {
+	border: 1px solid black;
+	width:48%;
+	float:left;
+	
 }
+
 
 
 #rettArtikkel2 {
-    float:right;
-    margin-top:-112%;
+    float:left;
+    margin-top:0%;
     width:50%;
-    height:80%;
+    
+	
     
 }
 
 #bordArtikkel {
     border: 1px solid black;
     width: 48%;
-    height: 635px;
-    margin-top:-59%;
+    height: 720px;
+    margin-top:-66.7%;
     margin-left:50%;
 	font-family: monospace;
+	float:right;
 }
 
 #BordArtikkel2 {
     float:right;
-    margin-top:-106%;
+    margin-top:-106.5%;
     width:50%;
 }
 
 .retter {
     border: 1px solid black;
-    width: 48%;
-	height:22%;
+    width: 100%;
+	
+	float:left;
+	float:bottom;
+	
 }
 
 .retter2 {
     border: 1px solid black;
-    width: 100%;
 	height:22%;
+	float:right;
+	float:bottom;
 }
 
+.rettBildeWrapper {
+	float: left;
+	
+	width:45%;
+	height:148px;
+	border: 1px solid black;
+}
 .rettBilde {
-    width:45%;
-    height:140px;
+    width:100%;
+	height:100%;
+	
 }
 
 .rettSkrift {
+	height:auto;
     float:right;
-	width:53%;
+	width:auto;
+	
     
 }
 
+.pageWrap {
+	width:auto;
+	border: 1px solid black;
+	height:auto;
+	
+	
+}
 
+
+body {
+padding: 0;
+margin: 0;
+width: 100%;
+
+
+}
 
 .bord {
     border: 1px solid black;
@@ -130,8 +157,26 @@ a {
 #bestillingBoks {
     border: 2px solid black;
     text-align:center;
-    width:47.5%;
-    margin-left:0%;
-	margin-top:2.5%;
+    width:48%;
+    margin-right:2%;
+	margin-top:0.5%;
+	float:left;
 }
 
+#bestillingsBoks2 {
+	border: 2px solid black;
+    text-align:center;
+    width:48%;
+    margin-right:0;
+	margin-top:0.5%;
+	float:right;
+}
+
+#retterSubmit {
+	margin-top:0%;
+	margin-left:21%;
+	
+}
+.bestillingBoksD {
+	margin-top:-3%;
+}

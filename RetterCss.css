@@ -62,7 +62,7 @@ a {
 
 #rettArtikkel2 {
     float:right;
-    margin-top:-112%;
+    margin-top:-128%;
     width:50%;
     height:80%;
     
@@ -71,15 +71,15 @@ a {
 #bordArtikkel {
     border: 1px solid black;
     width: 48%;
-    height: 635px;
-    margin-top:-59%;
+    height: 711px;
+    margin-top:-66%;
     margin-left:50%;
 	font-family: monospace;
 }
 
 #BordArtikkel2 {
     float:right;
-    margin-top:-106%;
+    margin-top:-130%;
     width:50%;
 }
 
@@ -131,7 +131,21 @@ a {
     border: 2px solid black;
     text-align:center;
     width:47.5%;
-    margin-left:0%;
-	margin-top:2.5%;
+    margin-right:2%;
+	margin-top:3.8%;
+	float:left;
 }
 
+#bestillingsBoks2 {
+	border: 2px solid black;
+    text-align:center;
+    width:47.5%;
+    margin-right:2%;
+	margin-top:3.8%;
+	float:right;
+}
+
+#retterSubmit {
+	margin-top:0%;
+	margin-left:21%;
+}

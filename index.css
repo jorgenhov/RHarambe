@@ -109,9 +109,11 @@ h1 {
 	margin-top: 10%;
 }
 
-#HarambePic {
-	float: left;
+img {
+    width:50%;
+    float: left;
 }
+
 
 article {
 	margin-left: 53%;
@@ -148,4 +150,20 @@ article {
 
 .quiantity {
     float: right;
+}
+
+h2 {
+    font-family: monospace;
+    font-size: 240%;
+}
+
+article {
+    font-family: monospace;
+    font-size: 120%;
+    text-align: center;
+}
+
+article h3 {
+    font-family: monospace;
+    font-style: italic;
 }

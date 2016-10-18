@@ -6,11 +6,14 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Harambe</title>
+        <title>Harambe | Bestill</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="retterCss.css">
 		<link rel="stylesheet" type="text/css" href="headerMal.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
     <body>
 	<div class="pageWrap">
@@ -50,22 +53,22 @@ and open the template in the editor.
 			
                 <div class="rettBildeWrapper"><img class="rettBilde" alt="Harambe burger" src ="https://gfx.nrk.no/7bhJYqzZ47LlTI1GmVK4EgUiIxStKj15j235pHP_VV3g" /></div> <p class="rettSkrift"><b>#1 Harambe Burger</b><br> Den mest mongo<br> burgeren på <br>markedet!</p>
 				
-				<input type="submit" value="Legg til">
+				<form><button type="button" class="btn btn-danger btn-xs">Legg til</button></form>
 			</div>
              <div class="retter">
                  <div class="rettBildeWrapper"><img class="rettBilde" alt="Harambe kebab" src ="http://kebablaunion.es/wp-content/uploads/2015/12/kebab-durum-rollo.jpg"/></div> <p class="rettSkrift"><b>#2 Harambe Kebab</b><br> Den fantastiske<br> harambe kebaben<br> med smak av fersk<br> harambe kjøtt!</p>
 				
-				<input type="submit" value="Legg til">
+				<form><button type="button" class="btn btn-danger btn-xs">Legg til</button></form>
 			</div>
              <div class="retter">
                  <div class="rettBildeWrapper"><img class="rettBilde" alt="Harambe Taco" src ="http://static.klikk.no/recipe/2012.10.22/50850512eff0b1b161a39443/pannekaker_BIG.jpg"/></div> <p class="rettSkrift"><b>#3 Taco</b><br> En taco rett<br> med mange fyldige<br> smaker og har<br> en helt unik <br> touch over seg.</p>
 				
-				<input type="submit" value="Legg til">
+				<form><button type="button" class="btn btn-danger btn-xs">Legg til</button></form>
 			</div>
              <div class="retter">
                 <div class="rettBildeWrapper"><img class="rettBilde" alt="nammenam" src ="https://brandofitness.files.wordpress.com/2010/06/food-special-placeholder.gif"/></div> <p class="rettSkrift"><b>#4 Harambe <br>Spesial</b><br> Vår favoritt <br>rett. Kommer med<br> smaksgaranti.</p>
 				
-				<input type="submit" value="Legg til">
+				<form><button type="button" class="btn btn-danger btn-xs">Legg til</button></form>
 			</div>
 			</div>
             
@@ -73,22 +76,22 @@ and open the template in the editor.
                 <div class="retter2">
                 <div class="rettBildeWrapper"><img class="rettBilde" alt="Harambe nudler" src ="http://vegetarguide.no/sites/vegetarguide.no/files/imagecache/Fullsize-640x480/images/node/nudler-med-tofu-708-533.jpg"/></div> <p class="rettSkrift"><b>#5 Harambe Nudler</b><br> Stekte nudler med <br>grønnsaker og <br>harambe.</p>
 				
-				<input type="submit" value="Legg til">
+				<form><button type="button" class="btn btn-danger btn-xs">Legg til</button></form>
 			</div>
              <div class="retter2">
                  <div class="rettBildeWrapper"><img class="rettBilde" alt="Harambe salt" src ="https://res.cloudinary.com/norgesgruppen/image/upload/c_fit,f_auto,h_604,q_80,w_604/fvjo3ocdrljqmhrwzbn1.jpg"/></div> <p class="rettSkrift"><b>#6 Harambe Salat</b><br> Salat med tomat,<br> oliven, agurk og<br> harambe.</p>
 				
-				<input type="submit" value="Legg til">
+				<form><button type="button" class="btn btn-danger btn-xs">Legg til</button></form>
 			</div>
              <div class="retter2">
                  <div class="rettBildeWrapper"><img class="rettBilde" alt="Harambe pizza" src ="http://cookdiary.net/wp-content/uploads/images/Pizza.jpg"/></div> <p class="rettSkrift"><b>#7 Harambe Pizza</b><br> Pizza med paprika,<br> tomat og den<br> spesielle harambe<br> pepperonien. </p>
 				
-				<input type="submit" value="Legg til">
+				<form><button type="button" class="btn btn-danger btn-xs">Legg til</button></form>
 			</div>
              <div class="retter2">
                  <div class="rettBildeWrapper"><img class="rettBilde" alt="Harambe bolognese" src ="http://www.errenskitchen.com/wp-content/uploads/2015/02/spaghetti-bolognese-8-of-1.jpg"/></div> <p class="rettSkrift"><b>#8 Harambe <br>Bolognese</b><br> Spaghetti, <br>tomatsaus <br> og harambe kjøtt-<br>deig.</p>
 				
-				<input type="submit" value="Legg til">
+				<form><button type="button" class="btn btn-danger btn-xs">Legg til</button></form>
 				</form>
 			</div>
                 
@@ -141,7 +144,9 @@ and open the template in the editor.
                     <option value="Bord8">Bord 8</option>
                 </select>
                 
-                <br><br><input type="submit" value="Legg til">
+                <div class="bestillingBoksD">
+            <form><br><br><button type="button" class="btn btn-danger btn-xs">Legg til</button></form>
+            </div>
                 
             </form>
             </div>
@@ -159,7 +164,9 @@ and open the template in the editor.
                     <option value="Antall6">Olden</option>
                 </select>
 				
-				<br><br><input type="submit" value="Legg til">
+				<div class="bestillingBoksD">
+            <form><br><br><button type="button" class="btn btn-danger btn-xs">Legg til</button></form>
+            </div>
 			</form>
 			</div>
              

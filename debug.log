@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [1017/094509:ERROR:process_info.cc(608)] range at 0xd47a386800000000, size 0x186 fully unreadable
 [1017/094509:ERROR:process_info.cc(608)] range at 0xd47a38ce00000000, size 0x186 fully unreadable
 [1017/094509:ERROR:process_info.cc(608)] range at 0x0, size 0x186 fully unreadable
@@ -6,3 +7,11 @@
 [1017/094509:WARNING:in_range_cast.h(38)] value 1678602290314 out of range
 [1017/094509:WARNING:in_range_cast.h(38)] value 1678602287870 out of range
 [1017/094509:WARNING:in_range_cast.h(38)] value 1678602288080 out of range
+=======
+[1017/183427:ERROR:process_info.cc(330)] VirtualQueryEx: Ingen tilgang. (0x5)
+[1017/183427:ERROR:process_info.cc(547)] ReadMemoryInfo failed
+[1017/183427:ERROR:process_reader_win.cc(142)] SuspendThread: Ingen tilgang. (0x5)
+[1017/183427:ERROR:exception_snapshot_win.cc(87)] thread ID 14720 not found in process
+[1017/183427:WARNING:crash_report_exception_handler.cc(56)] ProcessSnapshotWin::Initialize failed
+[1017/183427:ERROR:scoped_process_suspend.cc(38)] NtResumeProcess: Forsøkte å få tilgang til en avsluttende prosess.  (0xc000010a)
+>>>>>>> dd5d726d197b5f378c21c1fe74607b4ef2881770

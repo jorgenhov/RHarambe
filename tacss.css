@@ -125,7 +125,7 @@ article {
 
 #rettArtikkel2 {
     float:right;
-    margin-top: -88%;
+    margin-top: -86.8%;
     width:50%;
 
 	display:inline-block;
@@ -186,8 +186,8 @@ select {
 .drikkeBilde
 {
 	height:50px;
-	width: 25%;
-	height: 35%;
+	width: 20%;
+	height: 25%;
 	float:left;
 	
 }
@@ -206,5 +206,3 @@ select {
 	margin-left: 20%;
 	margin-top: 10%;
 }
-
-

@@ -142,7 +142,7 @@ width: 100%;
     border-radius:300px;
     margin-top:5%;
     text-align:center;
-    background-color:saddlebrown;
+    background: linear-gradient(to bottom right, #A52224, #590000);
 }
 
 .bord2 {
@@ -152,8 +152,9 @@ width: 100%;
     border-radius:300px;
     margin-top:10%;
     text-align:center;
-    background-color:saddlebrown;
+    background: linear-gradient(to bottom right, #A52224, #590000);
 }
+
 #bestillingBoks {
     border: 2px solid black;
     text-align:center;

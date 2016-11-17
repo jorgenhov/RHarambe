@@ -23,6 +23,7 @@ class CreateOrdersTable extends Migration
             $table->string('order_id');
 
             $table->forign('table_id')->references('table_id')->on('tables')->onDelete('cascade');
+            $table->forign('person_orders')->references('person_orders_id')->onDelete('cascade');
         });
     }
 

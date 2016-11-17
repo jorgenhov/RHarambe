@@ -21,6 +21,8 @@ class CreateOrdersTable extends Migration
             $table->timestamps();
 
             $table->string('order_id');
+
+            $table->forign('table_id')->references('table_id')->on('tables')->onDelete('cascade');
         });
     }
 

@@ -15,7 +15,7 @@ class CreatePersonOrdersTable extends Migration
     {
         Schema::create('person_orders', function (Blueprint $table) {
             $table->string('person_order_id');
-            $table->string('order_id');
+            $table->string('order_id')->unsigned();
             $table->string('food_id');
             $table->string('drink_id');
             $table->timestamps();

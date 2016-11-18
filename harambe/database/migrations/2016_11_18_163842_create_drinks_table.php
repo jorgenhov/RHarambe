@@ -17,7 +17,7 @@ class CreateDrinksTable extends Migration
             $table->string('drink_id');
             $table->string('name');
             $table->string('imagePath');
-            $table->string('name');
+            $table->integer('price');
             $table->text('description');
             $table->timestamps();
 

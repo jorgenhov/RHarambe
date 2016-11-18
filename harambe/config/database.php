@@ -87,8 +87,7 @@ return [
             'charset'  => 'utf8',
             'prefix'   => '',
             'pooling' => true,
-            'options'  => [
-                          ],
+        ],
 
     ],
 

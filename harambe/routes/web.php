@@ -100,15 +100,15 @@ Route::group(['prefix' => 'user'],function(){
     Route::get('profile',[
             'as' => 'user.profile',
             'uses' => 'UserController@getProfile'
-        ]);
+    ]);
+    Route::get('logout',[
+    'as' => 'user.logout',
+    'uses' => 'UserController@getLogout'
+    ]);
     Route::group(['middleware' => 'auth'],function(){
         Route::get('edit',[
             'as' => 'user.edit',
             'uses' => 'UserController@getEdit'
-        ]);
-        Route::get('logout',[
-            'as' => 'user.logout',
-            'uses' => 'UserController@getLogout'
         ]);
     });
 });

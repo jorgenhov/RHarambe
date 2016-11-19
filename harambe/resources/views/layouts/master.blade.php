@@ -28,7 +28,7 @@
       </ul>   
     </nav>
 	 </div>
-	 @if(Auth::attempt())
+	 @if(Auth::check())
     <p><a href="{{ route('user.profile')}}">Min Side</a></p>
    @else 
     <p><a href="{{ route('user.login') }}">Logg inn</a></p>

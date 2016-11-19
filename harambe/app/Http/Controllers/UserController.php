@@ -24,9 +24,8 @@ class UserController extends Controller
             'password' => $request->input('password')
         ])){
             return redirect()->route('user.profile');
-        } else {
-            return redirect()->back();
         }
+        return redirect()->back();
     }
 
     public function getRegister(){

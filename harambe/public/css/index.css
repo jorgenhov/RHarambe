@@ -1,0 +1,58 @@
+img {
+    width:50%;
+    float: left;
+}
+
+
+article {
+    margin-left: 53%;
+}
+
+
+.lessQuantity {
+    border: 2px solid #DEDEDE;
+    float: right;
+    padding: 0 20% 0 20%;
+    border-radius: 50%;
+    background-color: #FCFCFC;
+    float: left;
+}
+
+.lessQuantity:hover {
+    background-color: #636363;
+    color: #EBEBEB;
+}
+
+.moreQuantity {
+    border: 2px solid #DEDEDE;
+    float: right;
+    padding: 0 15% 0 15%;
+    border-radius: 50%;
+    background-color: #FCFCFC;
+    float: right;
+}
+
+.moreQuantity:hover {
+    background-color: #636363;
+    color: #EBEBEB;
+}
+
+.quiantity {
+    float: right;
+}
+
+h2 {
+    font-family: monospace;
+    font-size: 240%;
+}
+
+article {
+    font-family: monospace;
+    font-size: 120%;
+    text-align: center;
+}
+
+article h3 {
+    font-family: monospace;
+    font-style: italic;
+}

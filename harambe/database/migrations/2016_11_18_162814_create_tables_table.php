@@ -14,7 +14,7 @@ class CreateTablesTable extends Migration
     public function up()
     {
         Schema::create('tables', function (Blueprint $table) {
-            $table->string('table_id');
+            $table->string('table_id')->unique();
             $table->string('name');
             $table->integer('capacity');
             $table->text('description');

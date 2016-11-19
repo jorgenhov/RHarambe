@@ -1,1 +1,1 @@
-@extdends('layout.master');
+@extends('layouts.master');

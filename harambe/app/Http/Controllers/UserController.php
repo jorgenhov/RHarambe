@@ -43,13 +43,13 @@ class UserController extends Controller
             'adress' => 'required|min:3'
         ]);
         $user = new User([
-            'userID' => md5($request->input('email')),
+            'user_id' => md5($request->input('email')),
             'username' => $request->input('username'),
             'password' => bcrypt($request->input('password'))
         ]);
         $user->save();
         $person = new Person([
-            'personID' => md5($request->input('email')),
+            'person_id' => md5($request->input('email')),
             'firstname' => $request->input('firstname'),
             'lastname' => $request->input('lastname'),
             'email' => $request->input('email'),

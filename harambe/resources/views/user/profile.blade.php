@@ -38,16 +38,6 @@
         <br>
         <br>
         <br>
-
-        <div class="divshadowbox">
-            <section>
-                <h3>Kundeservice</h3>
-                <a href="kontaktOss.html">Kontakt oss</a>
-                <br>
-                <br>
-                <a href="sendMelding.html">Send oss en melding</a>
-            </section>
-        </div>
         </div>
 
 

@@ -14,9 +14,10 @@ class UserController extends Controller
     }
 
     public function postLogin(Request $request){
+        dd($request->input('username'));
         $this->validate($request,[
-            'username' => 'required|min:3',
-            'password' => 'required|min:6'
+            'username' => 'required',
+            'password' => 'required'
         ]);
         if(Auth::attempt([
             'username' => $request->input('username'),
@@ -63,7 +64,7 @@ class UserController extends Controller
     }
 
     public function getProfile(){
-
+        return view('user.profile');
     }
 
     public function getEdit(){

@@ -28,7 +28,11 @@
       </ul>   
     </nav>
 	 </div>
-	 <p><a href="login.html">Logg inn</a></p>
+	 @if(Auth::attempt())
+    <p><a href="{{ route('user.profile')}}">Min Side</a></p>
+   @else 
+    <p><a href="{{ route('user.login') }}">Logg inn</a></p>
+   @endif
    @yield('content')
 	</div>
   @yield('scripts')

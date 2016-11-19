@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Harambe</title>
+    <title>@yield('title')</title>
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/headermal.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('lib/bootstrap/lib/bootstrap.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('lib/font-awesome/css/font-awesome.min.css') }}">

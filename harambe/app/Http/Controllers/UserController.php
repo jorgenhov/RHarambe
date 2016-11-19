@@ -72,4 +72,8 @@ class UserController extends Controller
     public function postEdit(){
     	
     }
+
+    public function getLogout(){
+        Auth::logout();
+    }
 }

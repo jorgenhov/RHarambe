@@ -31,7 +31,7 @@ class UserController extends Controller
         return view('user.register');
     }
 
-    public function postRegister(){
+    public function postRegister(Request $request){
         $this->validate($request,[
             'username' => 'required|min:3',
             'password' => 'required|min:6',

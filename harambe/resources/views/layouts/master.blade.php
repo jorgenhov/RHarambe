@@ -8,7 +8,9 @@ and open the template in the editor.
 
 <head>
     <title>Harambe</title>
-    <link rel="stylesheet" type="text/css" href="{{ assets('headermal.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('headerMal.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('lib/bootstrap/lib/bootstrap.min.css) }}">
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('lib/font-awesome/css/font-awesome.min.css') }}">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width" content="initial-scale=1">
     @yield('stylesheet');

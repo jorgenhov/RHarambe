@@ -97,12 +97,11 @@ Route::group(['prefix' => 'user'],function(){
         'as' => 'user.register',
         'uses' => 'UserController@postRegister'
     ]);
+    Route::group(['middleware' => 'auth'],function(){
           Route::get('profile',[
             'as' => 'user.profile',
             'uses' => 'UserController@getProfile'
         ]);
-    Route::group(['middleware' => 'auth'],function(){
-
         Route::get('edit',[
             'as' => 'user.edit',
             'uses' => 'UserController@getEdit'

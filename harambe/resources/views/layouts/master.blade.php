@@ -20,10 +20,10 @@
     </header>     
     <nav>
       <ul>
-        <li><a href="produkter.html">Hjem</a></li>
+        <li><a href="{{ route('pages.index') }}">Hjem</a></li>
         <li><a href="kontakt.html">Bestill</a></li>
         <li><a href="nyheter.html">Takeaway</a></li>
-        <li><a href="om_oss.html">Kontakt</a></li>
+        <li><a href="{{ route('pages.contact') }}">Kontakt</a></li>
         <li><a href="handlekurv.html">Handlekurv</a></li>
       </ul>   
     </nav>

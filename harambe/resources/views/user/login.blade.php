@@ -3,6 +3,9 @@
     <div class="container-fluid">
         <form method="post" action="{{ route('user.login') }}">
             <div class="row">
+                @if(Session::has('register_success'))
+                    <div class="alert alert-success">Registrering velykktet. Du kan nå logge inn</div>
+                @endif
                 <h3 style="text-align:center;">Vennligst logg inn</h3>
                 <div class="col-md-6 col-md-offset-3" style="margin-top:20px;">
                     <div class="input-group input-group-lg">

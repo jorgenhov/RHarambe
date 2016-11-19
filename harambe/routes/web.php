@@ -15,87 +15,100 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-
-
-Route::group(['prefix' => 'admin'], function(){
-	Route::get('',[
-		'uses' => '',
-		'as' => ''
-	]);
+Route::group(['prefix' => 'order'],function(){
+    Route::get('takeaway',[
+        'as' => 'order.takeaway',
+        'uses' => 'OrderController@getTakeaway'
+    ]);
+    Route::post('takeaway',[
+        'as' => 'order.takeaway',
+        'uses' => 'OrderController@getTakeaway'
+    ]);
+    Route::get('tableReservation',[
+        'as' => 'order.reservation',
+        'uses' => 'OrderController@getTableReservation'
+    ]);
+    Route::post('tableReservation',[
+        'as' => 'order.reservation',
+        'uses' => 'OrderController@postTableReservation'
+    ]);
+    Route::get('foodReservation',[
+        'as' => 'order.dish',
+        'uses' => 'OrderController@getFoodReservation'
+    ]);
+    Route::post('foodReservation',[
+        'as' => 'order.dish',
+        'uses' => 'OrderController@postFoodReservation'
+    ]);
 });
 
-
-
-
-Route::group(['prefix' => 'order'], function(){
-	Route::get('foodreservation',[
-		'uses' => 'OrderController@getFoodReservation',
-		'as' => 'order.foodreservation'
-	]);
-	Route::get('tablereservation',[
-		'uses' => 'OrderController@getTableReservation',
-		'as' => 'order.tablereservation'
-	]);
-	Route::get('takeaway',[
-		'uses' => 'OrderController@getTakeaway',
-		'as' => 'order.takeaway'
-	]);
+Route::group(['prefix' => 'pages'],function(){
+    Route::get('index',[
+        'as' => 'pages.index',
+        'uses' => 'PageController@getIndex'
+    ]);
+    Route::get('contact',[
+        'as' => 'pages.contact',
+        'uses' => 'PageController@getContact'
+    ]);
 });
 
-
-
-
-Route::group(['prefix' => 'pages'], function(){
-	Route::get('index',[
-		'uses' => 'PageController@getIndex',
-		'as' => 'pages.index'
-	]);
-	Route::get('takeaway',[
-		'uses' => 'PageController@getContact',
-		'as' => 'pages.contact'
-	]);
+Route::group(['prefix' => 'shop'],function(){
+    Route::get('cart',[
+        'as' => 'shop.cart',
+        'uses' => 'ShopController@getCart'
+    ]);
+    Route::get('/add-to-cart/{id}',[
+        'as' => 'shop.reservation',
+        'uses' => 'ShopController@addToCart'
+    ]);
+    Route::get('checkout',[
+        'as' => 'shop.checkout',
+        'uses' => 'ShopController@getCheckout'
+    ]);
+    Route::get('/add-to-cart-takeaway/{id}',[
+        'as' => 'shop.takeaway',
+        'uses' => 'ShopController@addToCartTakeaway'
+    ]);
+    Route::get('confirm',[
+        'as' => 'shop.confirm',
+        'uses' => 'ShopController@getConfirm'
+    ]);
+    Route::get('/delete-from-cart/{id}/{rowId}',[
+        'as' => 'shop.delete',
+        'uses' => 'ShopController@deleteFromCart'
+    ]);
 });
 
-
-
-
-Route::group(['prefix' => 'shop'], function(){
-	Route::get('cart',[
-		'uses' => 'ShopController@getUserCart',
-		'as' => 'shop.cart'
-	]);
-	Route::get('addToCart',[
-		'uses' => 'ShopController@addToCart',
-		'as' => 'pages.contact'
-	]);
-});
-
-
-
-Route::group(['prefix' => 'users'], function(){
-	Route::get('login',[
-		'uses' => 'UserController@getLogin',
-		'as' => 'user.login'
-	]);
-	Route::post('login',[
-		'uses' => 'UserController@postLogin',
-		'as' => 'user.login'
-	]);
-	Route::get('register',[
-		'uses' => 'UserController@getRegister',
-		'as' => 'user.register'
-	]);
-	Route::post('register',[
-		'uses' => 'UserController@postRegister',
-		'as' => 'user.register'
-	]);
-	Route::get('edit',[
-		'uses' => 'UserController@getEdit',
-		'as' => 'user.edit'
-	]);
-	Route::post('edit',[
-		'uses' => 'UserController@postEdit',
-		'as' => 'user.edit'
-	]);
+Route::group(['prefix' => 'user'],function(){
+    Route::get('login',[
+        'as' => 'user.login',
+        'uses' => 'UserController@getLogin',
+    ]);
+    Route::post('login',[
+        'as' => 'user.login',
+        'uses' => 'UserController@postLogin',
+    ]);
+    Route::get('register',[
+        'as' => 'user.register',
+        'uses' => 'UserController@getRegister'
+    ]);
+    Route::post('register',[
+        'as' => 'user.register',
+        'uses' => 'UserController@postRegister'
+    ]);
+    Route::group(['middleware' => 'auth'],function(){
+        Route::get('profile',[
+            'as' => 'user.profile',
+            'uses' => 'UserController@getProfile'
+        ]);
+        Route::get('edit',[
+            'as' => 'user.edit',
+            'uses' => 'UserController@getEdit'
+        ]);
+        Route::get('logout',[
+            'as' => 'user.logout',
+            'uses' => 'UserController@getLogout'
+        ]);
+    });
 });

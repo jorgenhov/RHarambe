@@ -14,7 +14,7 @@ class OrderController extends Controller
 
     }
 
-    public fucntion postTableReservation(){
+    public function postTableReservation(){
 
     }
 

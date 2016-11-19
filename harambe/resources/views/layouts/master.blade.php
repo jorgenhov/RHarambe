@@ -12,7 +12,7 @@
 </head>
     
 <body>
-
+   @yield('content')
 <div class="pageWrap">
   <div class="headerWrap">       
     <header>
@@ -27,14 +27,12 @@
         <li><a href="handlekurv.html">Handlekurv</a></li>
       </ul>   
     </nav>
-	 </div>
-	 @if(Auth::check())
+   </div>
+   @if(Auth::check())
     <p><a href="{{ route('user.profile')}}">Min Side</a></p>
    @else 
     <p><a href="{{ route('user.login') }}">Logg inn</a></p>
    @endif
-   @yield('content')
-	</div>
   @yield('scripts')
 </body>
 </html>

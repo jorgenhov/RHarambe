@@ -1,0 +1,128 @@
+article {
+    height: 730px;
+    font-size: 30px;
+    text-align: center;
+    border: 2px solid black;
+    color:white;
+    width:1900px;
+
+
+}
+
+.ArtikkelTA {
+    margin-left:5%;
+    margin-right: 5%;
+}
+
+
+#header {
+    text-align:center;
+}
+
+#retterHeader, #bordHeader {
+    text-align:center;
+}
+
+#rettArtikkel {
+    margin-top:40px;
+    margin-left:5%;
+    border: 1px solid black;
+    width: 40%;
+    height: 820px;
+    display:inline-block;
+    float:left;
+}
+
+
+
+
+#rettArtikkel2 {
+    float:right;
+    margin-top: -80.8%;
+    width:50%;
+
+    display:inline-block;
+
+
+}
+
+
+.retter {
+    border: 1px solid black;
+    width: 48%;
+
+
+}
+
+.retter2 {
+    border: 1px solid black;
+    width: 100%;
+
+
+
+}
+
+.rettBilde {
+    width:50%;
+    height:150px;
+}
+
+.rettSkrift {
+    float:right;
+
+
+}
+
+#wrapper {
+    width:200%;
+
+    height: 85%;
+}
+#article1 {
+    border: 1px solid black;
+    width: 40%;
+    height: 690px;
+
+    display:inline-block;
+    vertical-align:top;
+    float: left;
+    margin: 39px 0 0 100px;
+}
+
+
+select {
+    clear: both;
+}
+
+.drikkeWrap {
+    width: 100%;
+    margin-top:8%;
+}
+
+.drikkeBilde
+{
+    height:50px;
+    width: 20%;
+    height: 25%;
+    float:left;
+
+}
+.drikkemeny1
+{
+    border: 1px solid black;
+    width: 50%;
+    margin: 0 auto;
+    height:100%;
+    min-height: 60px;
+    text-align:center;
+    clear: both;
+}
+
+#bestillingBoksD {
+    margin-left: 18%;
+    margin-top: 10%;
+}
+button{
+    width:30%;
+
+}

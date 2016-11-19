@@ -57,8 +57,8 @@ class UserController extends Controller
             'adress' => $request->input('adress')
         ]);
         $person->save();
-        return $request->session()->flash('register_success','Registrering velykket. Du kan nå logge inn');
         return redirect()->route('user.login');
+        return $request->session()->flash('register_success','Registrering velykket. Du kan nå logge inn');
     }
 
     public function getProfile(){

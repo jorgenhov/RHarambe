@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+
+<head>
+    <title>Harambe</title>
+    <link rel="stylesheet" type="text/css" href="{{ assets('headermal.css')}}">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width" content="initial-scale=1">
+    @yield('stylesheet');
+</head>
+    
+<body>
+
+<div class="pageWrap">
+  <div class="headerWrap">       
+    <header>
+      <a href="index.html"><h1>Restaurant<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Harambe</h1></a> 
+    </header>     
+    <nav>
+      <ul>
+        <li><a href="produkter.html">Hjem</a></li>
+        <li><a href="kontakt.html">Bestill</a></li>
+        <li><a href="nyheter.html">Takeaway</a></li>
+        <li><a href="om_oss.html">Kontakt</a></li>
+        <li><a href="handlekurv.html">Handlekurv</a></li>
+      </ul>   
+    </nav>
+	 </div>
+	 <p><a href="login.html">Logg inn</a></p>
+   @yield('content')
+	</div>
+  @yield('scripts')
+</body>
+</html>

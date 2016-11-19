@@ -1,0 +1,1 @@
+@extdends('layout.master');

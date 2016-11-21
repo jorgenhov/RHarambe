@@ -1,0 +1,21 @@
+
+img{
+    width:10px;
+    height: 50px;
+}
+
+.border{
+    outline: 1px solid black;
+}
+.tableB{
+
+    border-radius:6px;
+    border:1px solid gray;
+    width:100px;
+    height:64px;
+    margin:10px;
+    color:#FFF;
+    cursor:pointer;
+    text-align:right;
+    display: inline-block;
+}

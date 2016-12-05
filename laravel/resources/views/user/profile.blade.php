@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layout.master')
 @section('stylesheet')
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/profile.css') }}">
 @endsection
@@ -14,10 +14,11 @@
             <section>
                 <h3>Min profil</h3>
                 <br>
-                <a href="{{ route('user.edit')}}">Endre profil</a>
-                <br>
-                <br>
-                <a href="{{ route('user.logout') }}">Logg ut</a>
+                <a href="{{ route('edit')}}">Endre profil</a><br><br>
+                @if(Auth::user()->isAdmin)
+                    <a href="{{route('adminIndex')}}">Admin Panel</a><br><br>
+                @endif
+                <a href="{{ route('logout') }}">Logg ut</a><br><br>
             </section>
 
         </div>
@@ -26,7 +27,7 @@
 
             <section class="profil">
                 <h3>Mine ordre</h3>
-                <a class="Pprofil" href="{{ route('user.orders')}}">Mine ordrer</a>
+                <a class="Profil" href="{{ route('orders')}}">Mine ordrer</a>
                 <br>
                 <br>
             </section>

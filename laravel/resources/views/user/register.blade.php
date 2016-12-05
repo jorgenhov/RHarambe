@@ -1,9 +1,9 @@
-@extends('layouts.master')
+@extends('layout.master')
 @section('content')
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                <form role="form" method="POST" action="{{ route('user.register') }}">
+                <form role="form" method="POST" action="{{ route('register') }}">
                     @if(count($errors) > 0)
                         <div class="alert alert-danger">
                             @foreach($errors->all() as $error)
@@ -67,10 +67,10 @@
                             <button type="submit" class="btn btn-lg btn-primary">
                                 Register
                             </button>
-                            <a href="#">Already have an account?</a>
+                            <a href="{{ route('login') }}">Already have an account?</a>
                         </div>
                     </div>
-                        {{ csrf_field() }}
+                    {{ csrf_field() }}
                 </form>
             </div>
 

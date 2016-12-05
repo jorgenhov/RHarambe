@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Table extends Model
 {
-    protected $fillable = ['tableID','number','description','capacity'];
+    protected $fillable = ['table_id','number','description','capacity'];
 
-       public function orders(){
-           return $this->hasMany('App\Order','ref_tableID','tableID');
-       }
+    public function orders(){
+        return $this->hasMany('App\Order','id','id');
+    }
 }

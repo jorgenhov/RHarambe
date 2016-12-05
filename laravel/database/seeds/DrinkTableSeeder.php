@@ -13,31 +13,28 @@ class DrinkTableSeeder extends Seeder
     public function run()
     {
         $drink = new Drink([
-            'drinkID' => 'tnRjmUcuReAaPMgI',
             'imagePath' => '',
             'name' => 'Coca Cola',
             'price' => 45
         ]);
         $drink->save();
         $drink = new Drink([
-            'drinkID' => '4no0POs7N9c7VwIG',
             'imagePath' => '',
             'name' => 'Fanta',
             'price' => 40
         ]);
         $drink->save();
         $drink = new Drink([
-            'drinkID' => '6HyFo0wi4RAvisYw',
             'imagePath' => '',
             'name' => 'Sprite',
             'price' => 30
         ]);
         $drink->save();
         $drink = new Drink([
-            'drinkID' => 'll4G9rBtYpmXsLEa',
             'imagePath' => '',
             'name' => 'Pepsi',
             'price' => 45
         ]);
+        $drink->save();
     }
 }

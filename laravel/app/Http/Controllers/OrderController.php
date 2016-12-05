@@ -2,73 +2,64 @@
 
 namespace App\Http\Controllers;
 
-use App\Dish;
+use App\Food;
+use App\Order;
 use App\Table;
 use Illuminate\Http\Request;
-use App\Order;
-use Cart;
-use DB;
-use Session;
+use Illuminate\Support\Facades\Session;
 
 class OrderController extends Controller
 {
-    public function getTakeaway(){
-        $food = Dish::all();
-        $foodCollect = collect($food);
-        $firstRow = $foodCollect->only(0,1,2,3);
-        $secondRow = $foodCollect->only(4,5,6,7);
-        return view('order.takeaway',[
-            'firstRow' => $firstRow,
-            'secondRow' => $secondRow
+    public function showFood(){
+        $food = Food::all();
+        $collect = collect($food);
+        $firstItem = $collect->only(0,1,2,3);
+        $secondItem = $collect->only(4,5,6,7);
+        return view('order.food',[
+            'firstRow' => $firstItem,
+            'secondRow' => $secondItem
         ]);
     }
 
-    public function getReservation(){
-        return view('order.reservation');
+    public function showTable(){
+        return view('order.table');
     }
 
-    public function postReservation(Request $request){
+    public function showTakeaway(){
+        $food = Food::all();
+        $collect = collect($food);
+        $firstItem = $collect->only(0,1,2,3);
+        $secondItem = $collect->only(4,5,6,7);
+        return view('order.takeaway',[
+            'firstRow' => $firstItem,
+            'secondRow' => $secondItem
+        ]);
+    }
 
+    public function postTable(Request $request){
         $reserved = Order::where([
-                            'date' => $request->input('date'),
-                            'time' => $request->input('time')
-                        ])
-                        ->leftJoin('tables', 'ref_tableID', '=', 'tables.tableID')
-                        ->get();
+            'date' => $request->input('date'),
+            'time' => $request->input('time')
+            ])
+            ->leftJoin('tables', 'ref_table_id', '=', 'tables.id')
+            ->get();
 
-        $available = Table::whereDoesntHave('orders')
-                    ->get();
+        $available = Table::whereDoesntHave('orders')->get();
 
         $request->session()->flash('tables',true);
-        $request->session()->put('date',$request->input('date'));
-        $request->session()->put('time',$request->input('time'));
+        if(Session::has('date') && Session::has('time')){
+            Session::forget('date');
+            Session::forget('time');
+            $request->session()->put('date',$request->input('date'));
+            $request->session()->put('time',$request->input('time'));
+        } else {
+            $request->session()->put('date',$request->input('date'));
+            $request->session()->put('time',$request->input('time'));
+        }
 
-        return view('order.reservation',[
+        return view('order.table',[
             'available' => $available,
             'reserved' => $reserved
         ]);
-    }
-
-    public function getReservationDish(){
-        $carts = Cart::content();
-
-        if($carts->isEmpty()){
-            return redirect()->route('order.reservation');
-        } else {
-            $products = Dish::all();
-            $dishCollect = collect($products);
-            $firstProductRow = $dishCollect->only(0,1,2,3);
-            $secondProductRow = $dishCollect->only(4,5,6,7);
-
-            foreach($carts as $cart){
-                return view('order.dish',[
-                    'date' => Session::get('date'),
-                    'time' => Session::get('time'),
-                    'name' => $cart->name,
-                    'firstRow' => $firstProductRow,
-                    'secondRow' => $secondProductRow
-                ]);
-            }
-        }
     }
 }

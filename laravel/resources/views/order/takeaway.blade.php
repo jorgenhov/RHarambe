@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layout.master')
 @section('stylesheet')
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/takeaway.css') }}">
 @endsection
@@ -13,6 +13,15 @@
             </div>
         </div>
         <div class="row">
+            @if (Session::has('error'))
+                <div class="alert alert-danger">
+                    {{ Session::get('error') }}
+                </div>
+            @elseif (Session::has('success'))
+                <div class="alert alert-success">
+                    {{ Session::get('success') }}
+                </div>
+            @endif
             <div id="wrapper">
                 <div id="rettArtikkel">
                     <h2 id="retterHeader">Retter</h2>
@@ -20,7 +29,7 @@
                         <div class="retter">
                             <img class="rettBilde" src="{{ URL::to( $firstItem->imagePath) }}"/>
                             <p class="rettSkrift"><b>{{ $firstItem->name }}</b><br> {!! nl2br(e(str_replace( "<br />", "\n", $firstItem->description))) !!}</p>
-                            <form><a href="{{ route('shop.takeaway',['id' => $firstItem->dishID]) }}" type="button" class="btn btn-success">Legg til</a></form>
+                            <form><a href="{{ route('addToCart',['id' => $firstItem->id,'category' => 'food']) }}" type="button" class="btn btn-success">Legg til</a></form>
                         </div>
                     @endforeach
                     <div id="rettArtikkel2">
@@ -28,7 +37,7 @@
                             <div class="retter2">
                                 <img class="rettBilde" src="{{ URL::to( $secondItem->imagePath) }}"/>
                                 <p class="rettSkrift"><b>{{ $secondItem->name }}</b><br>{!! nl2br(e(str_replace("<br />", "\n", $secondItem->description))) !!}<br></p>
-                                <form><a href="{{ route('shop.takeaway',['id' => $secondItem->dishID]) }}" class="btn btn-success">Legg til</a></form>
+                                <form><a href="{{ route('addToCart',['id' => $secondItem->id,'category' => 'food']) }}" class="btn btn-success">Legg til</a></form>
                             </div>
                         @endforeach
                     </div>

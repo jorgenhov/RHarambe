@@ -2,18 +2,29 @@
 
 namespace App\Http\Controllers;
 
-use App\Order;
-use App\Person;
-use App\User;
 use Illuminate\Http\Request;
+use App\Person;
+use App\Order;
+use App\User;
 
 class AdminController extends Controller
 {
-    public function getForms(){
-        return view('admin.forms');
+    public function showIndex(){
+        $persons = Person::all();
+        $users = User::all();
+        $orders = Order::all();
+        return view('admin.index',[
+            'persons' => $persons,
+            'users' => $users,
+            'orders' => $orders
+        ]);
     }
 
-    public function getTables(){
+    public function showForms(){
+    	return view('admin.forms');
+    }
+
+    public function showTables(){
         $persons = Person::all();
         $users = User::all();
         $orders = Order::all();
@@ -23,17 +34,4 @@ class AdminController extends Controller
             'orders' => $orders
         ]);
     }
-
-    public function getIndex(){
-        $persons = Person::all();
-        $users = User::all();
-        $orders = Order::all();
-
-        return view('admin.index',[
-            'persons' => $persons,
-            'users' => $users,
-            'orders' => $orders
-        ]);
-    }
-
 }

@@ -2,336 +2,219 @@
 
 namespace App\Http\Controllers;
 
-use App\Dish;
 use App\Drink;
-use App\Order;
-use App\Person;
+use App\Food;
 use App\Table;
-use App\ShopCarts;
-
-use Illuminate\Http\Request;
+use App\Person;
+use App\Order;
 use Cart;
+use Session;
 use Auth;
-use Illuminate\Support\Facades\Session;
-use League\Flysystem\Exception;
+use App\ShoppingCart;
+use Illuminate\Http\Request;
 
 class ShopController extends Controller
 {
-    public function getCart(){
+    public function showCart(){
         return view('shop.cart');
     }
 
-    public function addToCart(Request $request,$id){
-          // dd(Cart::content());
-          // Cart::destroy();
+    public function showCheckout(){
+        if(Auth::check()){
+            $cart_id = $this->quickRandom();
+            $cartCollection = Cart::getContent();
 
-
-        $tables = Table::where('tableID',$id)->get();
-        $dishes = Dish::where('dishID',$id)->get();
-        $drinks = Drink::where('drinkID',$id)->get();
-
-        foreach($drinks as $drink){
-            $drink = $drink;
-        }
-        foreach ($dishes as $dish){
-            $dish = $dish;
-        }
-        foreach($tables as $table){
-            $table = $table;
-        }
-
-
-        if(Cart::content()->isEmpty()){
-
-            if($tables->isEmpty()){
-                if($dishes->isEmpty()){
-                    if($drinks->isEmpty()){
-                        echo "WTF, well error should be here";
-                    } else {
-                        Cart::add([
-                            'id' => $drink->drinkID,
-                            'name' => $drink->name,
-                            'qty' => 1,
-                            'price' => $drink->price
-                        ]);
-                        $request->session()->flash('added',''.$drink->name.' ble lagt inn i handlekurven');
-                        return redirect()->back();
-                    }
-                } else {
-                    Cart::add([
-                        'id' => $dish->dishID,
-                        'name' => $dish->name,
-                        'qty' => 1,
-                        'price' => $dish->price
-                    ]);
-                    $request->session()->flash('added',''.$dish->name.' ble lagt inn i handlekurven');
-                    return redirect()->back();
-                }
-            } else {
-                Session::put('table',$table->number);
-                Session::put('tableID',$table->tableID);
-                Session::put('table',$table->number);
-                Cart::add([
-                    'id' => $table->tableID,
-                    'name' => $table->number,
-                    'qty' => 1,
-                    'price' => 0,
-                    'options' => [
-                        'date' => Session::get('date'),
-                        'time' => Session::get('time')
-                    ]
+            if(Session::get('date') == null){
+                $cart = new ShoppingCart([
+                    'cart_id' => $cart_id,
+                    'content' => serialize($cartCollection->toJson()),
                 ]);
-                return redirect()->route('order.dish');
-            }
-        } else {
-            if($tables->isEmpty()){
-
-            } else {
-                Cart::destroy();
-                Session::put('table',$table->number);
-                Session::put('tableID',$table->tableID);
-                Cart::add([
-                    'id' => $table->tableID,
-                    'name' => $table->number,
-                    'qty' => 1,
-                    'price' => 0,
-                    'options' => [
-                        'date' => Session::get('date'),
-                        'time' => Session::get('time')
-                    ]
-                ]);
-                return redirect()->route('order.dish');
-            }
-            if($drinks->isEmpty()){
-
-            } else {
-                Cart::add([
-                    'id' => $drink->drinkID,
-                    'name' => $drink->name,
-                    'qty' => 1,
-                    'price' => $drink->price
-                ]);
-                $request->session()->flash('added',''.$drink->name.' ble lagt inn i handlekurven');
-                return redirect()->back();
-            }
-
-            if($dishes->isEmpty()){
-
-            } else {
-                Cart::add([
-                    'id' => $dish->dishID,
-                    'name' => $dish->name,
-                    'qty' => 1,
-                    'price' => $dish->price
-                ]);
-                $request->session()->flash('added',''.$dish->name.' ble lagt inn i handlekurven');
-                return redirect()->back();
-            }
-        }
-    }
-
-    public function addToCartTakeaway(Request $request,$id){
-        $dishes = Dish::where('dishID',$id)->get();
-        $drinks = Drink::where('drinkID',$id)->get();
-
-        foreach($drinks as $drink){
-            $drink = $drink;
-        }
-        foreach ($dishes as $dish){
-            $dish = $dish;
-        }
-        if($dishes){
-            Cart::add([
-                'id' => $dish->dishID,
-                'name' => $dish->name,
-                'qty' => 1,
-                'price' => $dish->price
-            ]);
-            $request->session()->flash('added',''.$dish->name.' ble lagt inn i handlekurven');
-            return redirect()->back();
-        }
-        if($drinks){
-            Cart::add([
-                'id' => $drink->drinkID,
-                'name' => $drink->name,
-                'qty' => 1,
-                'price' => $drink->price
-            ]);
-            $request->session()->flash('added',''.$drink->name.' ble lagt inn i handlekurven');
-            return redirect()->back();
-        }
-
-    }
-
-    public function deleteFromCart(Request $request, $id,$rowId){
-        $tables = Table::where('tableID',$id)->get();
-        $dishes = Dish::where('dishID',$id)->get();
-        $drinks = Drink::where('drinkID',$id)->get();
-
-        if($tables){
-            foreach($tables as $table){
-                $request->session()->forget('table');
-                $request->session()->forget('date');
-                $request->session()->forget('time');
-                Cart::remove($rowId);
-            }
-        }
-        if($dishes){
-            foreach ($dishes as $dish){
-                Cart::remove($rowId);
-            }
-        }
-        if($drinks){
-            foreach($drinks as $drink){
-                Cart::remove($rowId);
-            }
-        }
-        return redirect()->back();
-    }
-
-    public function getCheckout(Request $request){
-        if(Auth::check()) {
-            $person = Person::where('userID', Auth::user()->userID);
-            $orderID = $this->generateRandomString();
-            $cartID = $this->generateRandomString();
-
-            if(Session::has('tableID')){
+                $cart->save();
                 $order = new Order([
-                    'orderID' => $orderID,
-                    'time' => Session::get('time'),
+                    'order_id' => $this->quickRandom(),
+                    'date' => '',
+                    'time' => '',
+                    'ref_person_id' => Auth::user()->user_id,
+                    'ref_cart_id' => $cart_id,
+                    'ref_table_id' => ''
+                ]);
+                $order->save();
+                return redirect()->route('confirm');
+            } else {
+                $cart = new ShoppingCart([
+                    'cart_id' => $cart_id,
+                    'content' => serialize($cartCollection->toJson()),
+                ]);
+                $cart->save();
+                $order = new Order([
+                    'order_id' => $this->quickRandom(),
                     'date' => Session::get('date'),
-                    'ref_personID' => Auth::user()->userID,
-                    'ref_cartID' => $cartID,
-                    'ref_tableID' => Session::get('tableID')
+                    'time' => Session::get('time'),
+                    'ref_person_id' => Auth::user()->user_id,
+                    'ref_cart_id' => $cart_id,
+                    'ref_table_id' => Session::get('table')
                 ]);
                 $order->save();
-
-                $cart = new ShopCarts([
-                    'cartID' => $cartID,
-                    'date' => date("Y-m-d"),
-                    'time' => date("H:m:s"),
-                    'content' => serialize(Cart::content())
-                ]);
-                $cart->save();
-                 Cart::destroy();
-                $request->session()->forget('tableID');
-                $request->session()->forget('date');
-                $request->session()->forget('time');
-                return redirect()->route('shop.confirm');
-            } else {
-                $order = new Order([
-                    'orderID' => $orderID,
-                    'time' => 'NULL',
-                    'date' => 'NULL',
-                    'ref_personID' => Auth::user()->userID,
-                    'ref_cartID' => $cartID,
-                    'ref_tableID' => Session::get('tableID')
-                ]);
-                $order->save();
-                $cart = new ShopCarts([
-                    'cartID' => $cartID,
-                    'date' => date("Y-m-d"),
-                    'time' => date("H:m:s"),
-                    'content' => serialize($carts)
-                ]);
-                $cart->save();
-                 Cart::destroy();
-                $request->session()->forget('tableID');
-                $request->session()->forget('date');
-                $request->session()->forget('time');
-                return redirect()->route('shop.confirm');
+                return redirect()->route('confirm');
             }
+                
         } else {
-            return redirect()->route('shop.manualCheckout');
+            if(Cart::isEmpty()){
+                return redirect()->back()->with('error','handlekurven var tom, du kan ikke fullføre bestillingen');
+            } else {
+                return view('shop.checkout');
+            }
         }
     }
 
-    public function getConfirm(){
+    public function showConfirm(Request $request){
+        Cart::clear();
+        if(Session::has('date')){
+            $request->session()->forget('date');
+            $request->session()->forget('time');
+        }
         return view('shop.confirm');
     }
 
-    public function getManualCheckout(){
-        return view('shop.manualCheckout');
+
+
+
+    public function postCheckout(Request $request){
+        $this->validate($request,[
+            'firstname' => 'required',
+            'lastname' => 'required',
+            'email' => 'required',
+            'phonenumber' => 'required',
+            'adress' => 'required'
+        ]);
+        try{
+            $person_id = $this->quickRandom();
+            $cart_id = $this->quickRandom();
+            $cartCollection = Cart::getContent();
+
+            $person = new Person([
+                'person_id' => $person_id,
+                'firstname' => $request->input('firstname'),
+                'lastname' => $request->input('lastname'),
+                'email' => $request->input('email'),
+                'phonenumber' => $request->input('phonenumber'),
+                'adress' => $request->input('adress')
+            ]);
+            $person->save();
+            $cart = new ShoppingCart([
+                'cart_id' => $cart_id,
+                'content' => serialize($cartCollection->toJson()),
+            ]);
+            $cart->save();
+            $order = new Order([
+                'order_id' => $this->quickRandom(),
+                'date' => Session::get('date'),
+                'time' => Session::get('time'),
+                'ref_person_id' => $person_id,
+                'ref_cart_id' => $cart_id,
+                'ref_table_id' => Session::get('table')
+            ]);
+            $order->save();
+            return redirect()->route('confirm');
+        }catch(Exception $exception){
+            return redirect()->back()->with('error','Noe gikk galt under bestillingen. Den ble ikke sendt');
+        }
     }
 
-    public function postManualCheckout(Request $request){
-                $orderID = $this->generateRandomString();
-                $table = Table::where('tableID',Session::get('tableID'))->get();
-                $cartID = $this->generateRandomString();
-        if(Session::has('tableID')){
-                $person = new Person([
-                    'personID' => md5($request->input('email')),
-                    'firstname' => $request->input('firstname'),
-                    'lastname' => $request->input('lastname'),
-                    'email' => $request->input('email'),
-                    'phonenumber' => $request->input('phonenumber'),
-                    'adress' => $request->input('adress'),
+
+
+
+
+
+    public function addToCart(Request $request,$id,$category){
+        switch($category){
+            case 'food':
+                $food = Food::find($id);
+                Cart::add([
+                    'id' => $food->id,
+                    'name' => $food->name,
+                    'price' => $food->price,
+                    'quantity' => 1,
                 ]);
-                $person->save();
-
-                $order = new Order([
-                    'orderID' => $orderID,
-                    'time' => Session::get('time'),
-                    'date' => Session::get('date'),
-                    'ref_personID' => md5($request->input('email')),
-                    'ref_cartID' => $cartID ,
-                    'ref_tableID' => Session::get('tableID'),
-                ]);
-                $order->save();
-
-                $cart = new ShopCarts([
-                    'cartID' => $cartID,
-                    'content' => serialize(Cart::content())
-                ]);
-                $cart->save();
-                    Cart::destroy();
-                    $request->session()->forget('tableID');
-                    $request->session()->forget('date');
-                    $request->session()->forget('time');
-                    return redirect()->route('shop.confirm');
-            } else {
-                    $person = new Person([
-                        'personID' => md5($request->input('email')),
-                        'firstname' => $request->input('firstname'),
-                        'lastname' => $request->input('lastname'),
-                        'email' => $request->input('email'),
-                        'phonenumber' => $request->input('phonenumber'),
-                        'adress' => $request->input('adress'),
+                return redirect()->back()->with('success','Matrett: '.$food->name.'ble lagt til i handlekurven');
+                break;
+            case 'drink':
+                $drinks = Drink::where('id',$id)->get();
+                break;
+            case 'table':
+                $table = Table::find($id);
+                if(Session::has('table')){
+                    Session::forget('table');
+                    Cart::clear();
+                        Cart::add([
+                            'id' => $table->id,
+                            'name' => $table->number,
+                            'price' => 00.00,
+                            'quantity' => 1,
+                            'attributes' => array(
+                                'date' => $request->input('date'),
+                                'time' => $request->input('time')
+                            )
+                        ]);
+                        Session::put('table',$table->number);
+                        return redirect()->route('food')->with('success','Bord nummer:'.$table->number.'ble lagt til i handlekurven');
+                } else {
+                    Cart::add([
+                        'id' => $table->id,
+                        'name' => $table->number,
+                        'price' => 00.00,
+                        'quantity' => 1,
+                        'attributes' => array(
+                            'date' => $request->input('date'),
+                            'time' => $request->input('time')
+                        )
                     ]);
-                    $person->save();
-
-                    $order = new Order([
-                        'orderID' => $orderID,
-                        'time' => 'NULL',
-                        'date' => 'NULL',
-                        'ref_personID' => md5($request->input('email')),
-                        'ref_cartID' => $cartID ,
-                        'ref_tableID' => 'NULL',
-                    ]);
-                    $order->save();
-
-                    $cart = new ShopCarts([
-                        'cartID' => $cartID,
-                        'content' => serialize(Cart::content())
-                    ]);
-                    $cart->save();
-                    Cart::destroy();
-                    $request->session()->forget('tableID');
-                    $request->session()->forget('date');
-                    $request->session()->forget('time');
-                    return redirect()->route('shop.confirm');
+                    Session::put('table',$table->number);
+                    return redirect()->route('food')->with('success','Bord nummer:'.$table->number.'ble lagt til i handlekurven');
                 }
-            }
-
-
-
-        private function generateRandomString($length = 10) {
-            $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-            $charactersLength = strlen($characters);
-            $randomString = '';
-            for ($i = 0; $i < $length; $i++) {
-                $randomString .= $characters[rand(0, $charactersLength - 1)];
-            }
-            return $randomString;
+                break;
         }
+    }
+
+    public function updateToCart(Request $request,$id,$quantity){
+        $condition = new \Darryldecode\Cart\CartCondition(array(
+            'name' => 'VAT 12.5%',
+            'type' => 'tax',
+            'target' => 'subtotal',
+            'value' => '12.5%',
+            'attributes' => array( // attributes field is optional
+                'description' => 'Value added tax',
+                'more_data' => 'more data here'
+            )
+        ));
+        $food = Food::find($id);
+
+    }
+
+    public function deleteToCart(Request $request,$id,$category){
+        switch($category) {
+            case 'table':
+                $table = Table::find($id);
+                Cart::remove($table->id);
+                $request->session()->forget('date');
+                $request->session()->forget('time');
+                $request->session()->forget('table');
+                return redirect()->back()->with('success','Bordet ble slettet fra handlekurven');
+                break;
+            case 'food';
+                $food = Food::find($id);
+                Cart::remove($food->id);
+                return redirect()->back()->with('success','Produktet ble slettet fra handlekurven');
+                break;
+            default:
+                return redirect()->back()->with('error', 'Noe gikk galt ved sletting av objektet');
+        }
+    }
+
+        public static function quickRandom($length = 16)
+    {
+        $pool = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+        return substr(str_shuffle(str_repeat($pool, $length)), 0, $length);
+    }
 }

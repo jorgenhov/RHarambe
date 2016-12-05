@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layout.master')
 @section('content')
 <div class="container">
   <h2>Dine bordrer</h2>
@@ -9,6 +9,7 @@
         <th>OrdreID</th>
         <th>Dato</th>
         <th>Tid</th>
+        <th>Handlinger</th>
       </tr>
     </thead>
     <tbody>
@@ -19,9 +20,10 @@
         </div>
     	@else 
         <tr>
-          <td>{{ $order->orderID }}</td>
+          <td>{{ $order->order_id }}</td>
           <td>{{ $order->time }}</td>
           <td>{{ $order->date }}</td>
+          <td><a href="{{route('deleteOrder',['id' => $order->order_id])}}" class="btn btn-danger">Slett ordre</a></td>
         </tr>
     	@endif
     @endforeach

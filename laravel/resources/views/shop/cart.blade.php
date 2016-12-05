@@ -1,17 +1,17 @@
-@extends('layouts.master')
+@extends('layout.master')
 @section('content')
-        <table id="cart" class="table table-hover table-condensed">
-            <thead>
-            <tr>
-                <th style="width:50%">Product</th>
-                <th style="width:10%">Price</th>
-                <th style="width:8%">Quantity</th>
-                <th style="width:22%" class="text-center">Subtotal</th>
-                <th style="width:10%"></th>
-            </tr>
-            </thead>
-            <tbody>
-            @foreach(Cart::content() as $cart)
+    <table id="cart" class="table table-hover table-condensed">
+        <thead>
+        <tr>
+            <th style="width:50%">Produkt</th>
+            <th style="width:10%">Pris</th>
+            <th style="width:8%">Antall</th>
+            <th style="width:22%" class="text-center">Totalt</th>
+            <th style="width:10%"></th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach(Cart::getContent() as $cart)
             <tr>
                 @if(is_numeric($cart->name))
                     <div class="row" style="margin-bottom: 40px;">
@@ -34,8 +34,8 @@
                             <h1 style="margin-left: 30px;">{{ Session::get('table') }}</h1>
                         </div>
                         <div class="col-md-4" style="margin-top:40px;">
-                            <a href="{{ route('order.reservation') }}"  class="btn btn-primary">Endre</a>
-                            <a href="{{ route('shop.delete',['id' => $cart->id, 'rowId' => $cart->rowId]) }}" class="btn btn-danger">Slett</a>
+                            <a href="{{ route('table') }}"  class="btn btn-primary">Endre</a>
+                            <a href="{{ route('deleteToCart',['id' => $cart->id, 'category' => 'table']) }}" class="btn btn-danger">Slett</a>
                         </div>
                     </div>
                 @else
@@ -48,26 +48,25 @@
                     </td>
                     <td data-th="Price">{{ $cart->price }}</td>
                     <td data-th="Quantity">
-                        <input type="number" class="form-control text-center" value="{{ $cart->qty }}">
+                        <input type="number" class="form-control text-center" value="{{ $cart->quantity }}" readonly="">
                     </td>
-                    <td data-th="Subtotal" class="text-center">{{ $cart->qty * $cart->price }}</td>
+                    <td data-th="Subtotal" class="text-center">{{ $cart->quantity * $cart->price }}</td>
                     <td class="actions" data-th="">
-                        <button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
-                        <a href="{{ route('shop.delete',['id' => $cart->id, 'rowId' => $cart->rowId]) }}" class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></a>
+                        <a href="{{ route('deleteToCart',['id' => $cart->id, 'category' => 'food']) }}" class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></a>
                     </td>
-                @endif
-            @endforeach
-            </tbody>
-            <tfoot>
-            <tr class="visible-xs">
-                <td class="text-center"><strong>{{ Cart::total() }}</strong></td>
-            </tr>
-            <tr>
-                <td><a href="{{ route('order.takeaway') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Forsett å handle</a></td>
-                <td colspan="2" class="hidden-xs"></td>
-                <td class="hidden-xs text-center"><strong> {{ Cart::total() }} ink.mva</strong></td>
-                <td><a href="{{ route('shop.checkout') }}" class="btn btn-success btn-block">Utsjekking <i class="fa fa-angle-right"></i></a></td>
-            </tr>
-            </tfoot>
-        </table>
+            @endif
+        @endforeach
+        </tbody>
+        <tfoot>
+        <tr class="visible-xs">
+            <td class="text-center"><strong>{{ Cart::getSubTotal() }}</strong></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan="2" class="hidden-xs"></td>
+            <td class="hidden-xs text-center"><strong> {{ Cart::getSubTotal() }}</strong></td>
+            <td><a href="{{ route('checkout') }}" class="btn btn-success btn-block">Utsjekking <i class="fa fa-angle-right"></i></a></td>
+        </tr>
+        </tfoot>
+    </table>
 @endsection

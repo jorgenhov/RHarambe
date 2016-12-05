@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layout.admin')
 @section('title')
     Tabeller
     @endsection
@@ -23,10 +23,10 @@
                 @foreach($orders as $order)
                     <tr class="odd gradeX">
                         <td>{{ $order->created_at }}</td>
-                        <td>{{ $order->orderID }}</td>
+                        <td>{{ $order->order_id }}</td>
                         <td>{{$order->date}}</td>
                         <td class="center">{{ $order->time }}</td>
-                        <td class="center">{{ $order->ref_personID }}</td>
+                        <td class="center">{{ $order->ref_person_id }}</td>
                     </tr>
                 @endforeach
                 </tbody>
@@ -105,7 +105,7 @@
                                 <tr>
                                     <td>{{ $user->id }}</td>
                                     <td>{{ $user->username }}</td>
-                                    <td>{{ $user->userID }}</td>
+                                    <td>{{ $user->user_id }}</td>
                                     <td>{{ $user->created_at }}</td>
                                 </tr>
                                 @endforeach

@@ -6,5 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Drink extends Model
 {
-    protected $fillable = ['drinkID','name','size','price'];
+    protected $fillable = ['imagePath','name','price'];
+
+    public function orders(){
+        return $this->hasMany('App\Order');
+    }
 }
